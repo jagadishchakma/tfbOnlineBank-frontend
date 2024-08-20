@@ -1,0 +1,38 @@
+#main-nav{
+    background-color: rgb(241, 241, 241);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    padding: 10px 0px;
+}
+#main-nav nav:last-child{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0px;
+}
+
+#main-nav nav a{
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+#main-nav nav a i{
+    margin-right: 10px;
+    display: inline-block;
+}
+#main-nav nav .active{
+    font-weight: bold;
+    border-left: 4px solid black;
+}
+#main-nav h4{
+    padding-left:20px;
+    margin: 20px 0px;
+    font-family: 'Times New Roman', Times, serif;
+}

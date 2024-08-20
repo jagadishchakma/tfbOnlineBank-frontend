@@ -1,0 +1,38 @@
+.main{
+    margin: 0;
+}
+    
+
+.login .row{
+    margin: 0;
+}
+.login .col-md-6{
+    padding: 0;
+}
+.login-logo{
+    background-color:#1162ff
+}
+.login input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 5px;
+}
+.login .form-group{
+    margin-top: 20px;
+}
+.login .login-form{
+  width:50%;
+
+}
+.login .brand-name{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    text-align: end;
+    color: blue
+}
+.login .brand-name h1{
+    margin: 0;
+}
