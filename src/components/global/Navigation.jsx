@@ -15,7 +15,7 @@ const Navigation = () => {
                 <Link href="/dashboard"><i className="bi bi-bar-chart-fill"></i> Investments</Link>
             </nav>
             <nav>
-                <Link href="/settings"><i className="bi bi-person-fill-gear"></i> Settings</Link>
+                <Link href="/settings" className={pathname == '/settings'?'active':'inactive'}><i className="bi bi-person-fill-gear"></i> Settings</Link>
                 <Link href="/logout"><i className="bi bi-box-arrow-right"></i> Log out</Link>
             </nav>
         </aside>

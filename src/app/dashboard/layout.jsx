@@ -1,12 +1,15 @@
-const DashboardLayout = () => {
+const DashboardLayout = ({children}) => {
     return (
+      <>
         <nav>
-            <ul>
-                <li>dash1</li>
-                <li>dash1</li>
-                <li>dash1</li>
-            </ul>
+          <ul>
+            <li>dash1</li>
+            <li>dash1</li>
+            <li>dash1</li>
+          </ul>
         </nav>
+        {children}
+      </>
     );
 };
 

@@ -39,17 +39,30 @@ const Login = () => {
                                 <label htmlFor="email">Email</label>
                                 <input type="email" name="email" placeholder="Enter your email" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="phone">Phone Number</label>
-                                <input type="number" name="phone" placeholder="Enter your phone number" />
-                            </div>
+                           <div className="row">
+                               <div className="col-6">
+                                   <div className="form-group">
+                                       <label htmlFor="phone">Phone Number</label>
+                                       <input type="number" name="phone" placeholder="Enter your phone number"/>
+                                   </div>
+                               </div>
+                               <div className="col-6">
+                                   <div className="form-group ms-3">
+                                       <label htmlFor="gender">Gender</label>
+                                       <select name="gender">
+                                           <option value="male">Male</option>
+                                           <option value="female">Female</option>
+                                       </select>
+                                   </div>
+                               </div>
+                           </div>
                             <div className="form-group">
                                 <label htmlFor="street">Street Address</label>
-                                <input type="text" name="stree" placeholder="Enter your street address" />
+                                <input type="text" name="stree" placeholder="Enter your street address"/>
                             </div>
                             <div className="row">
                                 <div className="col-6">
-                                    <div className="form-group">
+                                <div className="form-group">
                                         <label htmlFor="zipcode">Zip Code</label>
                                         <input type="number" name="zipcode" placeholder="Enter your zip code" />
                                     </div>
@@ -77,19 +90,22 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-4">
                                     <div className="form-group">
-                                        <label htmlFor="date">Date of birth</label>
-                                        <input type="date" name="date" />
+                                        <label htmlFor="year">Birth Year</label>
+                                        <input type="number" name="year"/>
                                     </div>
                                 </div>
-                                <div className="col-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="gender">Gender</label>
-                                        <select name="gender">
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                        </select>
+                                <div className="col-4">
+                                    <div className="form-group">
+                                        <label htmlFor="month">Birth Month</label>
+                                        <input type="number" name="month"/>
+                                    </div>
+                                </div>
+                                <div className="col-4">
+                                    <div className="form-group">
+                                        <label htmlFor="date">Birth Date</label>
+                                        <input type="number" name="date"/>
                                     </div>
                                 </div>
                             </div>
