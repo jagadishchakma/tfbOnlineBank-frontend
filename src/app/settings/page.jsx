@@ -1,13 +1,21 @@
-export const metadata = {
-  title: "TFB Settings",
-  description: "TFB online banking is banking platform service for valuable customer.",
-};
+'use client';
+
+import './page.css'
+import ProfileInfo from "@/components/settings/ProfileInfo";
+import {useSearchParams} from "next/navigation";
+import ProfileSecurity from "@/components/settings/ProfileSecurity";
+
 const Settings = () => {
-  return (
-    <div>
-      <h1>Settings</h1>
-    </div>
-  );
+  const searchParams = useSearchParams();
+  const type = searchParams.get('type');
+
+  if(type === "profile-info") {
+    return <ProfileInfo />;
+  }else if(type === "profile-security") {
+    return <ProfileSecurity />;
+  }else{
+    return <ProfileInfo/>
+  }
 };
 
 export default Settings;
