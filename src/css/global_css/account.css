@@ -1,0 +1,63 @@
+.account-balance {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.account-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 225, 224);
+    padding: 10px 40px;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.account-box p {
+    margin: 0;
+    padding: 0;
+}
+
+.available-balance div:first-child {
+    background-color: aliceblue;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-deposit-balance div:first-child {
+    background-color: rgb(150, 203, 249);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-withdraw-balance div:first-child {
+    background-color: rgb(154, 190, 196);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.totla-transfer-balance div:first-child {
+    background-color: rgb(145, 181, 130);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

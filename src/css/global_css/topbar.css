@@ -1,0 +1,21 @@
+#notification::after {
+    display: none;
+    position: relative;
+}
+#notification .badge{
+    position: absolute;
+    color: red;
+    left: -5px;
+    top: -5px;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #9fb5b4;
+    padding: 3px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: cetner;
+}

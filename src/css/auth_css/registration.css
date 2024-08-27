@@ -6,14 +6,14 @@
 .registration .row{
     margin: 0;
 }
-.registration .col-6,.registration .col-md-6{
+.registration .col-6,.registration .col-md-6, .registration .col-4{
     padding: 0;
 }
 .registration-logo{
     background-color:#1162ff;
     height: 100%;
 }
-.registration input, .registration select{
+.registration input, .registration select, .registration button{
     display: block;
     width: 100%;
     height: 50px;
@@ -36,4 +36,9 @@
 }
 .registration .brand-name h1{
     margin: 0;
+}
+.registration .invalid-feedback{
+    margin: 0!important;
+    display: block !important;
+    text-style: italic;
 }

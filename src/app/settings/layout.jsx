@@ -1,5 +1,6 @@
 import Link from "next/link";
 import './nav.css'
+import TopBar from "@/components/global/TopBar";
 
 
 export const metadata = {
@@ -11,7 +12,7 @@ const SettingsLayout = ({children}) => {
   return (
     <>
       <nav className="settings-nav">
-        <h4>Account Settings</h4>
+        <TopBar title="Account Settings"/>
         <ul className="d-flex align-items-center gap-4  shadow-sm">
           <li><Link href="/settings?type=profile-info"><i className="bi bi-person-up"></i> Personal Info</Link></li>
           <li><Link href="/settings?type=profile-security"><i className="bi bi-unlock-fill"></i> Password and Security</Link></li>
