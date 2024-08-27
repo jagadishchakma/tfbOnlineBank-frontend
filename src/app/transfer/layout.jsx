@@ -5,8 +5,8 @@ export const metadata = {
     description: 'Deposit to your account',
 }
 
-const DepositLayout = ({ children }) => {
+const TransferLayout = ({ children }) => {
     return children
 };
 
-export default DepositLayout;
+export default TransferLayout;

@@ -5,7 +5,7 @@ import { authApi } from "@/js/api";
 import { AuthContext } from "@/js/AuthContext";
 import { useContext, useState } from "react";
 
-const page = () => {
+const Deposit = () => {
     const [balance, setBalance] = useState(0);
     const [account_no, setAccountNo] = useState('');
     const [loading, setLoading] = useState(false);
@@ -70,4 +70,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Deposit;

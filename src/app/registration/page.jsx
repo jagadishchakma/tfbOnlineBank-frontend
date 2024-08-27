@@ -3,7 +3,7 @@ import '@/css/auth_css/registration.css';
 import { useState } from "react";
 import api from "@/js/api";
 
-const Login = () => {
+const Registration = () => {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('');
@@ -332,4 +332,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

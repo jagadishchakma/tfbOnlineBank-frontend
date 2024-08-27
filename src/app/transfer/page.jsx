@@ -5,7 +5,7 @@ import { authApi } from "@/js/api";
 import { AuthContext } from "@/js/AuthContext";
 import { useContext, useState } from "react";
 
-const page = () => {
+const Transfer = () => {
     const [balance, setBalance] = useState(0);
     const [receiver_account_no, setReceiverAccountNo] = useState('');
     const [sender_account_no, setSenderAccountNo] = useState('');
@@ -75,4 +75,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Transfer;
