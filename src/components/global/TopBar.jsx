@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import '@/css/global_css/topbar.css';
 import { useContext, useEffect, useState } from "react";
 import { authApi } from "@/js/api";
@@ -34,7 +33,7 @@ const TopBar = ({ title }) => {
                         </ul>
                     </div>
                     <div className="profile-image">
-                        {user && <Image src={user.profile.image} alt="profile" width={30} height={30} />}
+                        {user && <img src={user.profile.image} alt="profile" width='30' height='30' />}
                         
                     </div>
                     <div className="profile-settings navbar-nav">
