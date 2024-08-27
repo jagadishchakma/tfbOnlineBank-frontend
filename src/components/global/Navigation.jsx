@@ -4,9 +4,12 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import deposit from '@/images/deposit.png';
 import withdraw from '@/images/total_withdraw.png';
+import { useContext } from "react";
+import { AuthContext } from "@/js/AuthContext";
 
 const Navigation = () => {
     const pathname = usePathname();
+    const {logout} = useContext(AuthContext);
     return (
         <aside id="main-nav">
             <h4>TFB</h4>
@@ -21,7 +24,7 @@ const Navigation = () => {
             </nav>
             <nav>
                 <Link href="/settings" className={pathname == '/settings'?'active':'inactive'}><i className="bi bi-person-fill-gear"></i> Settings</Link>
-                <Link href="/logout"><i className="bi bi-box-arrow-right"></i> Log out</Link>
+                <Link href="#"  onClick={logout}><i className="bi bi-box-arrow-right"></i> Log out</Link>
             </nav>
         </aside>
     );

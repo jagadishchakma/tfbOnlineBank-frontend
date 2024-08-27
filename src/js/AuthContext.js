@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
           setFinished(true);
           window.location.href = '/accounts/login';
         }
-      }else{
+      } else {
         setFinished(true);
       }
     };
@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     try {
       const response = await api.post('accounts/login/', credentials);
-      if(response.data.error){
+      if (response.data.error) {
         return 'error'
       }
       const { token, user_id } = response.data;
@@ -53,14 +53,25 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
     localStorage.removeItem('user_id');
     setUser(null);
-    window.location.href = '/login';
+    window.location.reload();
   };
 
+
+
   return (
-    <AuthContext.Provider value={{ user, logout,login,setReloadUser,reloadUser,finished }}>
+    <AuthContext.Provider value={{ user, logout, login, setReloadUser, reloadUser, finished }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export { AuthContext, AuthProvider };
+// Check if the token exists in local storage
+const isAuthenticated = () => {
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('token');
+    return token !== null;
+  }
+  return false;
+};
+
+export { AuthContext, AuthProvider, isAuthenticated };

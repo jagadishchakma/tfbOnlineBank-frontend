@@ -1,4 +1,5 @@
 import TopBar from "@/components/global/TopBar";
+import PrivateRoute from "@/js/PrivateRoute";
 export const metadata = {
   title: "Transactions",
   description: "TFB online banking is banking platform service for valuable customer.",
@@ -6,10 +7,10 @@ export const metadata = {
 
 const SettingsLayout = ({ children }) => {
   return (
-    <>
+    <PrivateRoute>
       <TopBar title="Account Settings" />
       {children}
-    </>
+    </PrivateRoute>
   );
 };
 

@@ -1,6 +1,9 @@
+
+import PrivateRoute from "@/js/PrivateRoute";
+
 const DashboardLayout = ({children}) => {
     return (
-      <>
+      <PrivateRoute>
         <nav>
           <ul>
             <li>dash1</li>
@@ -9,7 +12,7 @@ const DashboardLayout = ({children}) => {
           </ul>
         </nav>
         {children}
-      </>
+      </PrivateRoute>
     );
 };
 

@@ -1,4 +1,5 @@
 import '@/app/transfer/deposit.css';
+import PrivateRoute from '@/js/PrivateRoute';
 
 export const metadata = {
     title: 'Deposit',
@@ -6,7 +7,7 @@ export const metadata = {
 }
 
 const TransferLayout = ({ children }) => {
-    return children
+    return <PrivateRoute>{children}</PrivateRoute>
 };
 
 export default TransferLayout;

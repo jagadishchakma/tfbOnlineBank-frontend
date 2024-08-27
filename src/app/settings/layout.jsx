@@ -1,6 +1,7 @@
 import Link from "next/link";
 import './nav.css'
 import TopBar from "@/components/global/TopBar";
+import PrivateRoute from "@/js/PrivateRoute";
 
 
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 
 const SettingsLayout = ({children}) => {
   return (
-    <>
+    <PrivateRoute>
       <nav className="settings-nav">
         <TopBar title="Account Settings"/>
         <ul className="d-flex align-items-center gap-4  shadow-sm">
@@ -21,7 +22,7 @@ const SettingsLayout = ({children}) => {
         </ul>
       </nav>
       {children}
-    </>
+    </PrivateRoute>
   );
 };
 

@@ -1,4 +1,5 @@
 import '@/app/deposit/deposit.css';
+import PrivateRoute from '@/js/PrivateRoute';
 
 export const metadata = {
     title: 'Deposit',
@@ -6,7 +7,8 @@ export const metadata = {
 }
 
 const DepositLayout = ({ children }) => {
-    return children
+    return <PrivateRoute>{children}</PrivateRoute>;
+
 };
 
 export default DepositLayout;

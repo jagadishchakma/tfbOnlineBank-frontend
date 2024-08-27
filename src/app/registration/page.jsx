@@ -2,6 +2,7 @@
 import '@/css/auth_css/registration.css';
 import { useState } from "react";
 import api from "@/js/api";
+import Link from 'next/link';
 
 const Registration = () => {
     const [errors, setErrors] = useState({});
@@ -322,7 +323,8 @@ const Registration = () => {
                                 {loading ? <button className="btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div></button> : <input type="submit" className="btn btn-dark" value="Submit" />}
-
+                                <p className="text-center">Already have an account?<Link href="/login"> Log in</Link></p>
+                                
                             </div>
                         </form>
                     </div>

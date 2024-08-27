@@ -1,6 +1,7 @@
 'use client';
 import '@/css/auth_css/login.css';
 import { AuthContext } from '@/js/AuthContext';
+import Link from 'next/link';
 import { useContext, useState } from 'react';
 
 
@@ -72,6 +73,7 @@ const Login = () => {
                                     className="btn btn-dark"
                                     value="Login"
                                 />
+                                 <p className="text-center">Not have an account?<Link href="/registration"> Register</Link></p>
                             </div>
                         </form>
                     </div>
