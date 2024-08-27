@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Layout from "@/components/global/Layout";
 import '@/css/global_css/global.css';
 import { AuthProvider } from "@/js/AuthContext";
+import PrivateRoute from "@/js/PrivateRoute";
 
 
 
@@ -14,24 +15,26 @@ export default function RootLayout({ children }) {
   if (pathname === '/login' || pathname == '/registration') {
     return (
       <AuthProvider>
-        <Layout>
-          <section className="main">
-            {children}
-          </section>
-        </Layout>
+          <Layout>
+            <section className="main">
+              {children}
+            </section>
+          </Layout>
       </AuthProvider>
     )
   }
   return (
     <AuthProvider>
-      <Layout>
-        <section>
-          <Navigation />
-        </section>
-        <section className="main">
-          {children}
-        </section>
-      </Layout>
+      <PrivateRoute>
+        <Layout>
+          <section>
+            <Navigation />
+          </section>
+          <section className="main">
+            {children}
+          </section>
+        </Layout>
+      </PrivateRoute>
     </AuthProvider>
   );
 }
