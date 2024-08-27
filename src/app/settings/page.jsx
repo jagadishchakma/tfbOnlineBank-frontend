@@ -4,6 +4,7 @@ import './page.css'
 import ProfileInfo from "@/components/settings/ProfileInfo";
 import {useSearchParams} from "next/navigation";
 import ProfileSecurity from "@/components/settings/ProfileSecurity";
+import { Suspense } from 'react';
 
 const Settings = () => {
   const searchParams = useSearchParams();
@@ -18,4 +19,8 @@ const Settings = () => {
   }
 };
 
-export default Settings;
+const Page = () =>{
+  return <Suspense><Settings/></Suspense>
+}
+
+export default Page;
