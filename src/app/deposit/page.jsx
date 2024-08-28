@@ -6,7 +6,7 @@ import { AuthContext } from "@/js/AuthContext";
 import { useContext, useState } from "react";
 
 const Deposit = () => {
-    const [balance, setBalance] = useState(0);
+    const [balance, setBalance] = useState('');
     const [account_no, setAccountNo] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -59,9 +59,9 @@ const Deposit = () => {
                         <span className="valid-feedback">{success && success}</span>
                     </div>
                     <div className="form-group">
-                        {loading ? <button className="btn btn-light"><div className="spinner-border spinner-border-sm" role="status">
+                        {loading ? <button className="btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
                             <span className="visually-hidden">Loading...</span>
-                        </div></button> : <input type="submit" className="btn btn-light" value="Deposit" />}
+                        </div></button> : <input type="submit" className="btn btn-dark" value="Deposit" />}
                     </div>
 
                 </form>

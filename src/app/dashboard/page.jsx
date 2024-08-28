@@ -1,11 +1,17 @@
-export const metadata = {
-    title: "TFB Dashboard",
-    description: "TFB online banking is banking platform service for valuable customer.",
-  };
+import AccountBox from "@/components/dashboard/AccountBox";
+import Transaction from "@/components/transaction/Transaction";
+
 const Dashboard = () => {
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <div className="dashboard mt-5">
+            <div className="row">
+                <div className="col-md-8">
+                    <AccountBox />
+                </div>
+                <div className="col-md-4">
+                    <Transaction />
+                </div>
+            </div>
         </div>
     );
 };

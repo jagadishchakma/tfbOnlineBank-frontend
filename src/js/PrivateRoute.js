@@ -1,19 +1,20 @@
 'use client';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { isAuthenticated } from './AuthContext';
+import { redirect } from 'next/navigation';
 
 
 const PrivateRoute = ({ children }) => {
-  const router = useRouter();
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      router.push('/login'); // Redirect to the login page
+      redirect("/login"); // Redirect to the login page
     }
-  }, [router]);
+    setIsClient(true)
+  }, [redirect]);
 
-  return isAuthenticated() ? children : null;
+  return (isAuthenticated() && isClient)  && children 
 };
 
 export default PrivateRoute;

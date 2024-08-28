@@ -1,0 +1,61 @@
+.transaction-menu{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.transaction-menu .active{
+    font-weight: bold;
+    color: black;
+}
+.transaction-menu li{
+    cursor: pointer;
+    font-size: 15px;
+    color: #3c3939;
+    font-family: 'Times New Roman', Times, serif;
+}
+.transaction-list{
+    margin-top: 40px;
+}
+
+.transaction-list .img-div-Deposited{
+    width: 30px;
+    height: 30px;
+    background-color:rgb(92, 149, 199);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.transaction-list .img-div-Withdraw{
+    width: 30px;
+    height: 30px;
+    background-color:rgb(221, 187, 103);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.transaction-list .img-div-Transfer{
+    width: 30px;
+    height: 30px;
+    background-color:rgb(190, 103, 221);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-list .img-div-Registration{
+    width: 30px;
+    height: 30px;
+    background-color:rgb(184, 221, 103);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-list h6, .transaction-list p{
+    font-size: 13px;
+    margin: 0;
+}

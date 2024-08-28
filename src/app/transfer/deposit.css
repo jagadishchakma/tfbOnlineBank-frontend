@@ -3,17 +3,16 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .deposit-box{
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     color: white;
     width: 50%;
-    padding: 40px;
     border-radius: 5px;
 }
 .deposit-box label{
     display: block;
 }
 .deposit-box .form-group{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .deposit-box .form-group:last-child{
     margin-bottom: 0px;
@@ -24,13 +23,9 @@
     padding: 10px;
     border-radius: 5px;
 }
-.deposit-box input[type="submit"]{
-    background-color: rgb(198, 200, 199);
-    border: none
-}
-.deposit-box input[type="submit"]:hover{
-    background-color: rgb(233, 234, 233);
-}
 .invalid-feedback,.valid-feedback{
     display: block !important;
+}
+.deposit-box input{
+    border: 2px solid #dbdbdb;
 }
