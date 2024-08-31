@@ -97,7 +97,7 @@ const QuickTransfer = () => {
             </div>
         )
     }
-
+    console.log(user_account);
     const addItem = () => {
         return (
             <div className="add-item">
