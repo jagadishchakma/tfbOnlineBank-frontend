@@ -40,5 +40,5 @@
 .registration .invalid-feedback{
     margin: 0!important;
     display: block !important;
-    text-style: italic;
+    font-style: italic;
 }
