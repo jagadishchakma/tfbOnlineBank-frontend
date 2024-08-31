@@ -91,7 +91,7 @@ const QuickTransfer = () => {
         return (
             <div className="d-flex flex-column align-items-center show-item mt-4" onClick={addQuickTransfer}>
                 <div className="show-image">
-                    <Image src={user_account.image} alt="profile" width={50} height={60} />
+                    <img src={user_account.image} alt="profile" width="50" height="60" />
                 </div>
                 <h6>{user_account.user.username}</h6>
             </div>
