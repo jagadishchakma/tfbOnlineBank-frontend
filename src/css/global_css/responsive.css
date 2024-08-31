@@ -1,0 +1,125 @@
+
+
+@media screen and (max-width: 991px) {
+    /* for navigation */
+    #main-nav{
+        padding: 0px;
+    }
+    .main-nav{
+        display: none;
+        z-index: 1000;
+    }
+    .nav-open{
+        display: block !important;
+    }
+    .main{
+        margin: 0;
+        padding: 5px;
+    }
+    .top-bar-title{
+        font-size: 15px;
+        margin: 0px;
+    }
+    #account-balance{
+        display: none !important
+    }
+    .deposit-box{
+        width: 100% !important;
+        margin-top: 50px;
+    }
+
+    /* for dashboard */
+    .quick-transfer-box{
+        width: 100% !important;
+    }
+    .dash-account-box{
+        padding: 5px !important;
+    }
+    .dash-account-box .deposit, .dash-account-box .withdraw{
+        padding: 5px !important;
+    }
+    .dash-account-box h3{
+        margin-top: 10px;
+        font-size: 15px !important;
+        text-align: center;
+    }
+    .dash-account-box h6{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .balance h3{
+        text-align: left !important;
+    }
+    .dash-account-box .deposit{
+        padding-left: 0px !important;
+    }
+    .dashboard .col-md-4{
+        margin-top: 50px;
+    }
+    .transaction-menu{
+        gap: 3px !important
+    }
+    .transaction-list > div{
+        margin: 8px !important;
+    }
+    .transaction-list .col-2{
+        padding-left: 0px;
+    }
+    #transaction-menu{
+        gap: 5px !important;
+        justify-content: space-between !important;
+    }
+
+    /* settings css */
+    #settings{
+        width: 100% !important
+    }
+
+    /* login css */
+    .login-logo{
+        display: none;
+    }
+    .login .brand-name{
+        display: none
+    }
+    .login .login-form{
+        width: 100% !important;
+    }
+    .login-form h1{
+        text-align: center
+    }
+    /* register css */
+    .registration-logo{
+        display: none
+    }
+    .registration .brand-name{
+        display:none
+    }
+    .registration-form h1{
+        text-align: center;
+    }
+    .registration-form .ms-3{
+        margin-left: 0px !important;
+    }
+    .registration-form .col-4 .form-group{
+        margin-right: 3px;
+    }
+    .registration-form .col-12{
+        padding: 0px;
+    }
+    .registration-form .birth_month{
+        margin-right: 4px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .mobile-nav{
+        display: none;
+    }
+    #close-main-nav{
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: 'https://tfbonlinebank-backend.onrender.com/',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -13,7 +13,7 @@ let uploadApi;
 if (typeof window !== 'undefined') {
   // Client-side code
   authApi = axios.create({
-    baseURL: 'http://127.0.0.1:8000/',
+    baseURL: 'https://tfbonlinebank-backend.onrender.com/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Token ${localStorage.getItem('token')}`,
@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
   });
 
   uploadApi = axios.create({
-    baseURL: 'http://127.0.0.1:8000/',
+    baseURL: 'https://tfbonlinebank-backend.onrender.com/',
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Token ${localStorage.getItem('token')}`,

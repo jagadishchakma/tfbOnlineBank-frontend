@@ -5,13 +5,14 @@ import '@/css/global_css/aside_navigation.css';
 import { redirect, usePathname } from "next/navigation";
 import Layout from "@/components/global/Layout";
 import '@/css/global_css/global.css';
-import { AuthProvider, isAuthenticated } from "@/js/AuthContext";
-import PrivateRoute from "@/js/PrivateRoute";
+import '@/css/global_css/responsive.css';
+import { AuthProvider } from "@/js/AuthContext";
+
+
 
 
 
 export default function RootLayout({ children }) {
- 
 
   const pathname = usePathname();
   if (pathname === '/login' || pathname == '/registration') {

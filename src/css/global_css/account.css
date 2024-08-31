@@ -7,10 +7,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(224, 225, 224);
+    background-color: #F8F9FA;
     padding: 10px 40px;
     gap: 5px;
     border-radius: 5px;
+    gap: 25px;
 }
 
 .account-box p {
@@ -19,7 +20,7 @@
 }
 
 .available-balance div:first-child {
-    background-color: aliceblue;
+    background-color: #B5DCF2;
     padding: 10px;
     width: 50px;
     height: 50px;
@@ -30,7 +31,7 @@
 }
 
 .total-deposit-balance div:first-child {
-    background-color: rgb(150, 203, 249);
+    background-color: #C6B5F2;
     padding: 10px;
     width: 50px;
     height: 50px;
@@ -41,7 +42,7 @@
 }
 
 .total-withdraw-balance div:first-child {
-    background-color: rgb(154, 190, 196);
+    background-color: #FEC0A7;
     padding: 10px;
     width: 50px;
     height: 50px;

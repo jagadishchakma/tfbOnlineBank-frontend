@@ -11,15 +11,14 @@
     cursor: pointer;
     font-size: 15px;
     color: #3c3939;
-    font-family: 'Times New Roman', Times, serif;
-}
-.transaction-list{
-    margin-top: 40px;
 }
 
+.transaction-list:hover{
+    cursor: pointer
+}
 .transaction-list .img-div-Deposited{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color:rgb(92, 149, 199);
     border-radius: 50%;
     display: flex;
@@ -27,8 +26,8 @@
     align-items: center;
 }
 .transaction-list .img-div-Withdraw{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color:rgb(221, 187, 103);
     border-radius: 50%;
     display: flex;
@@ -36,8 +35,8 @@
     align-items: center;
 }
 .transaction-list .img-div-Transfer{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color:rgb(190, 103, 221);
     border-radius: 50%;
     display: flex;
@@ -46,9 +45,18 @@
 }
 
 .transaction-list .img-div-Registration{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color:rgb(184, 221, 103);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.transaction-list .img-div-Loan{
+    width: 40px;
+    height: 40px;
+    background-color:rgb(120, 118, 117);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -58,4 +66,14 @@
 .transaction-list h6, .transaction-list p{
     font-size: 13px;
     margin: 0;
+}
+#notification-drop{
+    left: -300px;
+    right: 30px;
+    width: 300px;
+    padding: 10px;
+}
+.drop-css-none{
+    border: none !important;
+    padding: 0px !important;
 }

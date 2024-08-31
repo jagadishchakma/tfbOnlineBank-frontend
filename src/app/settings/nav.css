@@ -2,7 +2,6 @@
     margin-bottom: 20px;
 }
 .settings-nav h4{
-    font-family:'Times New Roman', Times, serif;
     font-weight: bold;
 }
 .settings-nav ul{
@@ -16,7 +15,5 @@
 .settings-nav ul li a{
     text-decoration: none;
     color: black;
-    font-family:'Times New Roman', Times, serif;
     font-size: 15px;
-    font-weight: bold;
 }

@@ -6,7 +6,7 @@
 .registration .row{
     margin: 0;
 }
-.registration .col-6,.registration .col-md-6, .registration .col-4{
+.registration .col-6,.registration .col-md-6, .registration .col-4, .registration .col-md-4{
     padding: 0;
 }
 .registration-logo{

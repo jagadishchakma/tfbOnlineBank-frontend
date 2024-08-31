@@ -190,14 +190,14 @@ const Registration = () => {
                                 {errors.username && <span className="invalid-feedback">{errors.username}</span>}
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="first_name">First Name</label>
                                         <input type="text" name="first_name" id="first_name" placeholder="Enter your first name" value={formData.first_name} onChange={handleChange} />
                                         {errors.first_name && <span className="invalid-feedback">{errors.first_name}</span>}
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group ms-3">
                                         <label htmlFor="last_name">Last Name</label>
                                         <input type="text" name="last_name" id="last_name" placeholder="Enter your last name" value={formData.last_name} onChange={handleChange} />
@@ -216,7 +216,7 @@ const Registration = () => {
                                 {errors.phone_no && <span className="invalid-feedback">{errors.phone_no}</span>}
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="account_type">Account Type</label>
                                         <select name="account_type" id="account type" value={formData.account_type} onChange={handleChange}>
@@ -228,7 +228,7 @@ const Registration = () => {
                                         {errors.gender && <span className="invalid-feedback">{errors.gender}</span>}
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group ms-3">
                                         <label htmlFor="gender">Gender</label>
                                         <select name="gender" id="gender" value={formData.gender} onChange={handleChange}>
@@ -246,14 +246,14 @@ const Registration = () => {
                                 {errors.street_address && <span className="invalid-feedback">{errors.street_address}</span>}
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="zip_code">Zip Code</label>
                                         <input type="number" name="zip_code" id="zip_code" placeholder="Enter your zip code" value={formData.zip_code} onChange={handleChange} />
                                         {errors.zip_code && <span className="invalid-feedback">{errors.zip_code}</span>}
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group ms-3">
                                         <label htmlFor="city">City</label>
                                         <input type="text" name="city" id="city" placeholder="Enter your city" value={formData.city} onChange={handleChange} />
@@ -263,14 +263,14 @@ const Registration = () => {
                             </div>
 
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="state">State</label>
                                         <input type="text" name="state" id="state" placeholder="Enter your State" value={formData.state} onChange={handleChange} />
                                         {errors.state && <span className="invalid-feedback">{errors.state}</span>}
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group ms-3">
                                         <label htmlFor="country">Country</label>
                                         <input type="text" name="country" id="country" placeholder="Enter your country" value={formData.country} onChange={handleChange} />
@@ -279,21 +279,21 @@ const Registration = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-12 col-md-4">
                                     <div className="form-group">
                                         <label htmlFor="birth_year">Birth Year</label>
                                         <input type="number" name="birth_year" id="birth_year" value={formData.birth_year} onChange={handleChange} />
                                         {errors.birth_year && <span className="invalid-feedback">{errors.birth_year}</span>}
                                     </div>
                                 </div>
-                                <div className="col-4">
-                                    <div className="form-group ms-3">
+                                <div className="col-6 col-md-4">
+                                    <div className="form-group ms-3 birth_month">
                                         <label htmlFor="birth_month">Birth Month</label>
                                         <input type="number" name="birth_month" id="birth_month" value={formData.birth_month} onChange={handleChange} />
                                         {errors.birth_month && <span className="invalid-feedback">{errors.birth_month}</span>}
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-6 col-md-4">
                                     <div className="form-group ms-3">
                                         <label htmlFor="birth_date">Birth Date</label>
                                         <input type="number" name="birth_date" id="birth_date" value={formData.birth_date} onChange={handleChange} />
@@ -302,14 +302,14 @@ const Registration = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="password">Password</label>
                                         <input type="password" name="password" id="password" placeholder="Enter your strong password" value={formData.password} onChange={handleChange} />
                                         {errors.password && <span className="invalid-feedback">{errors.password}</span>}
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-md-6">
                                     <div className="form-group ms-3">
                                         <label htmlFor="confirm_password">Confirm Password</label>
                                         <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" value={formData.confirm_password} onChange={handleChange} />

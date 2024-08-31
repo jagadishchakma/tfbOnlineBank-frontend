@@ -46,7 +46,7 @@ const ProfileSecurity = () => {
 
   return (
     <div className="profile-update">
-      <form onSubmit={handleChagnePass} className="w-50">
+      <form onSubmit={handleChagnePass} className="w-50" id="settings">
         <div className="d-flex align-items-center gap-3">
           <div className="form-group w-100">
             <label htmlFor="old_pass">Old Password </label> <br />

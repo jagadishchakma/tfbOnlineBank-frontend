@@ -49,12 +49,12 @@ const Withdraw = () => {
             <div className="deposit-box">
                 <form onSubmit={handleDeposit}>
                     <div className="form-group">
-                        <label htmlFor="account_no">Account number:</label>
-                        <input type="text" id="account_no" name="account_no" value={account_no} onChange={(e) => setAccountNo(e.target.value)} placeholder="Enter your account number" />
+                        <label htmlFor="account_no">Account number</label>
+                        <input type="text" id="account_no" name="account_no" value={account_no} onChange={(e) => setAccountNo(e.target.value)} placeholder="900563869402" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="deposit_amount">Withdraw Amount:</label>
-                        <input type="number" id="deposit_amount" name="deposit_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="Enter deposited amount" />
+                        <label htmlFor="deposit_amount">Withdraw Amount</label>
+                        <input type="number" id="deposit_amount" name="deposit_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="$0000" />
                         <span className="invalid-feedback">{error && error}</span>
                         <span className="valid-feedback">{success && success}</span>
                     </div>

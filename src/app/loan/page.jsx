@@ -1,13 +1,11 @@
-'use client';
+'use client'
 import Account from "@/components/global/Account";
-import TopBar from "@/components/global/TopBar";
 import { authApi } from "@/js/api";
 import { AuthContext } from "@/js/AuthContext";
 import { useContext, useState } from "react";
 
-const Deposit = () => {
+const Loan = () => {
     const [balance, setBalance] = useState('');
-    const [account_no, setAccountNo] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -19,18 +17,18 @@ const Deposit = () => {
         setLoading(true);
         e.preventDefault();
         if (balance < 500) {
-            setError('Minimum deposite amount is 500 TK. You can\'t deposite less than')
+            setError('Minimum loan amount is 500 TK. You can\'t loan less than')
             setLoading(false);
             return
         }
         if (balance > 10000000) {
-            setError('Maximum deposite amount is 10 milion. You can\'t deposite more than')
+            setError('Maximum loan amount is 10 milion. You can\'t loan more than')
             setLoading(false);
             return
         }
         try {
-            await authApi.put('accounts/balance/update/', { balance: balance, account_no: account_no });
-            setSuccess('Deposited successfull')
+            await authApi.post('accounts/loans/', { amount: balance });
+            setSuccess('loan request successfully send.')
             setTimeout(() => {
                 setLoading(false);
                 setReloadUser(reloadUser + 1);
@@ -38,30 +36,26 @@ const Deposit = () => {
             }, 1000);
 
         } catch (error) {
+            console.log(error)
             setLoading(false);
-            setError("Falied to deposited,something went wrong!")
+            setError("Falied to send loan request,something went wrong!")
         }
     }
     return (
         <div className="deposit">
-            <TopBar title="Account Deposit" />
             <Account />
             <div className="deposit-box">
                 <form onSubmit={handleDeposit}>
                     <div className="form-group">
-                        <label htmlFor="account_no">Account number:</label>
-                        <input type="text" id="account_no" name="account_no" value={account_no} onChange={(e) => setAccountNo(e.target.value)} placeholder="05345535" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="deposit_amount">Deposit Amount:</label>
-                        <input type="number" id="deposit_amount" name="deposit_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="$0000" />
+                        <label htmlFor="loan_amount">Loan Amount</label>
+                        <input type="number" id="loan_amount" name="loan_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="$0000" />
                         <span className="invalid-feedback">{error && error}</span>
                         <span className="valid-feedback">{success && success}</span>
                     </div>
                     <div className="form-group">
                         {loading ? <button className="btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
                             <span className="visually-hidden">Loading...</span>
-                        </div></button> : <input type="submit" className="btn btn-dark" value="Deposit" />}
+                        </div></button> : <input type="submit" className="btn btn-dark" value="Request Loan" />}
                     </div>
 
                 </form>
@@ -70,4 +64,4 @@ const Deposit = () => {
     );
 };
 
-export default Deposit;
+export default Loan;

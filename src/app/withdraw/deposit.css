@@ -1,10 +1,8 @@
 .deposit{
     font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
 }
 .deposit-box{
     background-color: rgb(255, 255, 255);
-    color: white;
     width: 50%;
     border-radius: 5px;
 }
@@ -12,20 +10,36 @@
     display: block;
 }
 .deposit-box .form-group{
-    margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .deposit-box .form-group:last-child{
     margin-bottom: 0px;
 }
-.deposit-box input{
-    border: 2px solid #dbdbdb;
-}
 .deposit-box input, .deposit-box button{
-    height: 60px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    height: 50px;
+    width: 100%;  
 }
 .invalid-feedback,.valid-feedback{
     display: block !important;
+}
+.deposit-box input[type='number'], .deposit-box input[type='text']{
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.deposit-box input:focus{
+    outline: none;
+    border-color: initial;
+    font-size: 18px;
+}
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

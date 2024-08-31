@@ -9,8 +9,8 @@ import { AuthContext } from "@/js/AuthContext";
 
 const Account = () => {
     const {user} = useContext(AuthContext);
-    return (
-        <div className="d-flex justify-content-between align-items-center account-balance">
+    return ( 
+        <div className="d-flex justify-content-start align-items-center account-balance gap-3" id="account-balance">
             <div className="available-balance account-box">
                 <div>
                     <Image src={available_balance} alt="avialble_balance" width={20} height={20} />

@@ -5,15 +5,17 @@ import { authApi } from "@/js/api";
 import { AuthContext } from "@/js/AuthContext";
 import { useContext, useState } from "react";
 
+
 const Transfer = () => {
+    const {user, setReloadUser, reloadUser, transfer } = useContext(AuthContext);
     const [balance, setBalance] = useState('');
-    const [receiver_account_no, setReceiverAccountNo] = useState('');
-    const [sender_account_no, setSenderAccountNo] = useState('');
+    const [receiver_account_no, setReceiverAccountNo] = useState((transfer && transfer.receiver) || '');
+    const [sender_account_no, setSenderAccountNo] = useState((transfer && transfer.sender) || '');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const {user, setReloadUser, reloadUser } = useContext(AuthContext);
+    
     const handleDeposit = async (e) => {
         setError('');
         setSuccess('')
@@ -50,16 +52,16 @@ const Transfer = () => {
             <div className="deposit-box">
                 <form onSubmit={handleDeposit}>
                     <div className="form-group">
-                        <label htmlFor="receiver_account_no">Receiver Account Number:</label>
-                        <input type="text" id="receiver_account_no" name="receiver_account_no" value={receiver_account_no} onChange={(e) => setReceiverAccountNo(e.target.value)} placeholder="Enter receiver account number" />
+                        <label htmlFor="receiver_account_no">Receiver Account No:</label>
+                        <input type="text" id="receiver_account_no" name="receiver_account_no" value={receiver_account_no} onChange={(e) => setReceiverAccountNo(e.target.value)} placeholder="900563869402" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="sender_account_no">Your Account Number:</label>
-                        <input type="text" id="sender_account_no" name="sender_account_no" value={sender_account_no} onChange={(e) => setSenderAccountNo(e.target.value)} placeholder="Enter your account number" />
+                        <label htmlFor="sender_account_no">Sender Account No:</label>
+                        <input type="text" id="sender_account_no" name="sender_account_no" value={sender_account_no} onChange={(e) => setSenderAccountNo(e.target.value)} placeholder="5345345" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="transfer_amount">Transfer Amount:</label>
-                        <input type="number" id="transfer_amount" name="deposit_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="Enter transfer amount" />
+                        <label htmlFor="balance">Balance:</label>
+                        <input type="number" id="transfer_amount" name="deposit_amount" value={balance} onChange={(e) => setBalance(e.target.value)} placeholder="$0000" />
                         <span className="invalid-feedback">{error && error}</span>
                         <span className="valid-feedback">{success && success}</span>
                     </div>

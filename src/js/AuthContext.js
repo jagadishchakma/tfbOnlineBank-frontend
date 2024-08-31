@@ -7,6 +7,8 @@ const AuthProvider = ({ children }) => {
   const [finished, setFinished] = useState(false);
   const [reloadUser, setReloadUser] = useState(0);
   const [user, setUser] = useState(null);
+  const [transfer, setTransfer] = useState(null);
+  const [toggler, setToggler] = useState(false);
   useEffect(() => {
     setFinished(false);
     const fetchUser = async () => {
@@ -59,7 +61,7 @@ const AuthProvider = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{ user, logout, login, setReloadUser, reloadUser, finished }}>
+    <AuthContext.Provider value={{ user, logout, login, setReloadUser, reloadUser, finished, transfer, setTransfer, toggler, setToggler }}>
       {children}
     </AuthContext.Provider>
   );

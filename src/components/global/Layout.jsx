@@ -1,8 +1,14 @@
+import { AuthContext } from '@/js/AuthContext';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import { Inter } from "next/font/google";
+import { useContext, useEffect } from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 const Layout = ({children}) => {
+    const {setToggler} = useContext(AuthContext)
+    useEffect(()=>{
+        setToggler(false);
+    },[])
     return (
         <html lang="en">
             <head>
@@ -11,7 +17,7 @@ const Layout = ({children}) => {
             </head>
             <body className={inter.className}>
                 {children}
-                <ProgressBar />
+                <ProgressBar color="#D97142" size="5"/>
                 <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin="anonymous"></script>
             </body>
         </html>

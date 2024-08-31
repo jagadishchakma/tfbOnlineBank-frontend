@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { isAuthenticated } from './AuthContext';
 import { redirect } from 'next/navigation';
 
-
 const PrivateRoute = ({ children }) => {
   const [isClient, setIsClient] = useState(false)
 

@@ -15,10 +15,8 @@ const SettingsLayout = ({children}) => {
       <nav className="settings-nav">
         <TopBar title="Account Settings"/>
         <ul className="d-flex align-items-center gap-4  shadow-sm">
-          <li><Link href="/settings?type=profile-info"><i className="bi bi-person-up"></i> Personal Info</Link></li>
-          <li><Link href="/settings?type=profile-security"><i className="bi bi-unlock-fill"></i> Password and Security</Link></li>
-          <li><Link href="/settings?type=profile-notification"><i className="bi bi-bell-fill"></i> Notifications</Link></li>
-          <li><Link href="/settings?type=profile-plan"><i className="bi bi-receipt"></i> Choose Plan</Link></li>
+          <li><Link href="/settings?type=profile-info" className="d-flex align-items-center gap-2"><i className="bi bi-person-up"></i> Personal Info</Link></li>
+          <li><Link href="/settings?type=profile-security" className="d-flex align-items-center gap-2"><i className="bi bi-unlock-fill"></i> Password and Security</Link></li>
         </ul>
       </nav>
       {children}

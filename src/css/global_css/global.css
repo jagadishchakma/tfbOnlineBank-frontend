@@ -6,3 +6,28 @@
     margin-left: 200px;
     padding: 25px;
 }
+
+/* For Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: white; /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #D97142; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D97142; /* Darker color when hovering over the scrollbar */
+}
+
+#close-main-nav{
+    font-size: 30px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}

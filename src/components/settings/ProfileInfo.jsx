@@ -75,7 +75,7 @@ const ProfileInfo = () => {
   };
 
   return (
-    <div>
+    <div className="w-50" id="settings">
       <div className="profile">
         <img src={user && user.profile.image} alt="" />
         <div className="profile-image-edit">
@@ -85,8 +85,8 @@ const ProfileInfo = () => {
           </label>
         </div>
       </div>
-      <div className="profile-update">
-        <form onSubmit={handleUpdateProfileSubmit} className="w-50">
+      <div className="profile-update mt-5">
+        <form onSubmit={handleUpdateProfileSubmit}>
           <div className="d-flex align-items-center gap-3">
             <div className="form-group w-50">
               <label htmlFor="fname">First Name</label> <br />
