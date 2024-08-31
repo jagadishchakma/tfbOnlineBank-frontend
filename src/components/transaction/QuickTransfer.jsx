@@ -42,7 +42,7 @@ const QuickTransfer = () => {
                 <div key={index} onClick={() => handleQuickTransfer({ sender: data.sender.profile.account_no, receiver: data.receiver.profile.account_no })}>
                     <Link href="#" className="tab d-flex flex-column justify-content-center align-items-center" >
                         <div className="quick-image d-flex justify-content-center align-items-center">
-                            <Image src={data.receiver.profile.image} alt="profile" width={50} height={60} />
+                            <img src={data.receiver.profile.image} alt="profile" width="50" height="60" />
                         </div>
                         <div className='text-center'>
                             <h6>{data.receiver.first_name}</h6>
@@ -91,7 +91,7 @@ const QuickTransfer = () => {
         return (
             <div className="d-flex flex-column align-items-center show-item mt-4" onClick={addQuickTransfer}>
                 <div className="show-image">
-                    <img src={user_account.image} alt="profile" width="50" height="60" />
+                    <Image src={user_account.image} alt="profile" width="50" height="60" />
                 </div>
                 <h6>{user_account.user.username}</h6>
             </div>
