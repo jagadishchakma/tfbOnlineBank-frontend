@@ -23,7 +23,7 @@ const Login = () => {
         if (result == 'error') {
             setError("Login Failed")
         } else {
-            window.location.href = '/'
+            window.location.href = '/dashboard'
         }
     };
 
