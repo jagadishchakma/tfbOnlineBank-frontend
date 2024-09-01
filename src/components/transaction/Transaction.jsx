@@ -11,6 +11,7 @@ import notFound from '@/images/not_found.png'
 import registration from '@/images/registration.png'
 import loan from '@/images/loan.png'
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Transaction = () => {
     const [type, setType] = useState('list/all/');
@@ -53,7 +54,7 @@ const Transaction = () => {
             }
             <div className="transaction-list">
                 {transactions.slice(0,5).map((transaction, index) => (
-                    <div className="d-flex justify-content-between align-items-center row mt-4" key={transaction.id}>
+                    <Link href={`/transactions/${transaction.id}`} className="d-flex justify-content-between align-items-center row mt-4" key={transaction.id} id={transaction.read?'read':'unread'}>
                         <div className="col-2">
                             {transaction.type == "Deposited" && <div className={`img-div-${transaction.type}`}><Image src={deposit} alt="deposit" width={20} height={20} /></div>}
                             {transaction.type == "Withdraw" && <div className={`img-div-${transaction.type}`}><Image src={withdraw} alt="withdraw" width={20} height={20} /></div>}
@@ -68,7 +69,7 @@ const Transaction = () => {
                         <div className="col-2">
                             <h6>${transaction.amount}</h6>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

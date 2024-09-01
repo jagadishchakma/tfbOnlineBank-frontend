@@ -19,3 +19,7 @@
     justify-content: center;
     align-items: cetner;
 }
+.transaction-list a{
+    text-decoration: none;
+    color: black;
+}

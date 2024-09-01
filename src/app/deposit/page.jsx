@@ -34,7 +34,7 @@ const Deposit = () => {
             setTimeout(() => {
                 setLoading(false);
                 setReloadUser(reloadUser + 1);
-                window.location.reload();
+                window.location.href = '/transactions'
             }, 1000);
 
         } catch (error) {

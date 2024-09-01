@@ -7,6 +7,8 @@ import Layout from "@/components/global/Layout";
 import '@/css/global_css/global.css';
 import '@/css/global_css/responsive.css';
 import { AuthProvider } from "@/js/AuthContext";
+import HomeNavigation from "@/components/home/HomeNavigation";
+import Footer from "@/components/home/Footer";
 
 
 
@@ -25,12 +27,25 @@ export default function RootLayout({ children }) {
         </Layout>
       </AuthProvider>
     )
-  }
-  if(pathname == '/'){
-    redirect('/dashboard')
-  }
-  return (
-    <AuthProvider>
+  } else if (pathname == '/') {
+    return (
+      <AuthProvider>
+        <Layout>
+          <section>
+            <HomeNavigation />
+          </section>
+          <section>
+            {children}
+          </section>
+          <section>
+            <Footer />
+          </section>
+        </Layout>
+      </AuthProvider>
+    )
+  } else {
+    return (
+      <AuthProvider>
         <Layout>
           <section>
             <Navigation />
@@ -39,6 +54,7 @@ export default function RootLayout({ children }) {
             {children}
           </section>
         </Layout>
-    </AuthProvider>
-  );
+      </AuthProvider>
+    );
+  }
 }

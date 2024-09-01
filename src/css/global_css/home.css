@@ -1,0 +1,106 @@
+body {
+    font-family: 'Roboto', Arial, Helvetica, 'Nimbus Sans L', sans-serif !important;
+}
+
+footer {
+    background-color: #252525;
+
+}
+
+.footer-top {
+    padding: 100px 0;
+}
+.footer-bottom{
+    border-top: 0.5px solid #3B3B3B;
+    padding: 25px 0;
+}
+
+footer h3,footer h4 {
+    color: #D5FFFF
+}
+
+footer a {
+    color: #889292 !important;
+}
+.pressenting-box{
+    background-color: #F7F7F7;
+}
+.pressenting-product{
+    padding: 50px 5px;
+    border-top: 0.5px solid #D2D2D8
+}
+.pressenting-product .product-title{
+    padding: 50px 0px;
+}
+.pressenting-product a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.pressenting-product a:hover{
+    color: #D97142
+}
+
+.business-banking .nav-link{
+    font-size: 20px !important;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.business-banking .nav-link:hover{
+    color: #D97142 !important;
+}
+.business-banking .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0; 
+    height: 2px; 
+    background-color: #D97142; 
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.business-banking .nav-link:hover::after {
+    width: 100%; 
+    left: 0; 
+}
+
+.business-banking{
+    padding: 50px 5px;
+}
+
+.business-banking .product-title{
+    padding: 50px 0px;
+}
+.business-banking nav{
+    border-bottom:  0.5px solid #D2D2D8;
+}
+
+.business-banking-box{
+    position: relative;
+    height: 300px;
+    margin-top: 50px;
+}
+
+.business-banking-box .business-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:-300px;
+    background-color: white
+}
+.business-banking-box #inactive{
+    display: none;
+}
+.business-banking-box #active{
+    z-index: 1000;
+    bottom: 0;
+    transition: bottom 1s ease, top 1s ease;
+}
+.bank-learning{
+    background-color: #81A8CA;
+    margin: 100px 0px;
+}

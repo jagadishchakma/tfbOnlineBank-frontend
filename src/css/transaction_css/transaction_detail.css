@@ -1,0 +1,28 @@
+.detail-box .top-message{
+    margin-bottom: 50px;
+    color: #4A9339
+}
+.detail-box td p:first-child{
+    color: #999999;
+}
+.detail-profile-img{
+    background-color: #E8E8E8;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detail-profile{
+    margin-bottom: 50px;
+    color:#999999;
+}
+.detail-profile p{
+    padding: 3px;
+    margin: 0;
+}
+.detail-profile p:first-child{
+    color: black;
+}
