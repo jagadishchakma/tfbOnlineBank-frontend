@@ -14,7 +14,7 @@
     padding: 0;
 }
 .login-logo{
-    background-color:#1162ff
+    background: linear-gradient(45deg, #E64530, transparent)
 }
 .login input{
     display: block;

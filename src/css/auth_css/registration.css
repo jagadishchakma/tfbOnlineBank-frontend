@@ -10,7 +10,7 @@
     padding: 0;
 }
 .registration-logo{
-    background-color:#1162ff;
+    background: linear-gradient(45deg, #E64530, transparent);
     height: 100%;
 }
 .registration input, .registration select, .registration button{
