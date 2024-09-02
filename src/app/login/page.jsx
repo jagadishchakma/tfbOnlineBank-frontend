@@ -68,12 +68,23 @@ const Login = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <input
-                                    type="submit"
-                                    className="btn btn-dark"
-                                    value="Login"
-                                />
-                                 <p className="text-center">Not have an account?<Link href="/registration"> Register</Link></p>
+                                {
+                                    loading ? (
+                                        <div className="btn btn-dark d-felx justify-content-center w-100">
+                                            <div className="spinner-border" role="status">
+                                                <span className="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <input
+                                            type="submit"
+                                            className="btn btn-dark"
+                                            value="Login"
+                                        />
+                                    )
+                                }
+
+                                <p className="text-center">Not have an account?<Link href="/registration"> Register</Link></p>
                             </div>
                         </form>
                     </div>
