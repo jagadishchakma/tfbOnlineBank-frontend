@@ -5,6 +5,7 @@ import api from "@/js/api";
 import Link from 'next/link';
 import logo from '@/images/logo.png';
 import Image from 'next/image';
+import sign_up_logo from '@/images/signup_logo.png';
 
 const Registration = () => {
     const [errors, setErrors] = useState({});
@@ -174,8 +175,8 @@ const Registration = () => {
         <div className="registration">
             <div className="row">
                 <div className="col-md-6">
-                    <div className="registration-logo">
-                        <img src='/images/login_image.png' alt="tfb online banking logo" width="100%" />
+                    <div className="registration-logo d-flex align-items-center justify-content-center">
+                        <Image src={sign_up_logo} alt="tfb online banking logo" />
                     </div>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">

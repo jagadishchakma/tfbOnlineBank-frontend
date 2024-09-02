@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useContext, useState } from 'react';
 import logo from '@/images/logo.png';
 import Image from 'next/image';
+import login_logo from '@/images/login.png';
 
 
 const Login = () => {
@@ -34,7 +35,7 @@ const Login = () => {
             <div className="row">
                 <div className="col-md-6">
                     <div className="login-logo">
-                        <img src='/images/login_image.png' alt="tfb online banking logo" width="100%" />
+                        <Image src={login_logo} alt="tfb online banking logo"  />
                     </div>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
