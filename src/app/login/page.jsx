@@ -3,6 +3,8 @@ import '@/css/auth_css/login.css';
 import { AuthContext } from '@/js/AuthContext';
 import Link from 'next/link';
 import { useContext, useState } from 'react';
+import logo from '@/images/logo.png';
+import Image from 'next/image';
 
 
 const Login = () => {
@@ -36,10 +38,9 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                    <div className="brand-name">
-                        <h1>TFB</h1>
-                        <p>Online Banking</p>
-                    </div>
+                    <Link href="/" className="brand-name">
+                        <Image src={logo} alt="logo" width={170} height={50}/>
+                    </Link>
                     <div className="login-form">
                         {error && <div className="alert alert-danger mt-3">{error}</div>}
                         {message.msg && !error && <div className={`alert alert-${message.color} mt-3 mb-3`} role="alert"> <i className={`bi ${message.icon}`}></i> {message.msg}  </div>}

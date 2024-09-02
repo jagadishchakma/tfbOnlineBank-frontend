@@ -1,7 +1,11 @@
+'use client';
 import Image from "next/image";
 import logo from '@/images/logo.png';
+import { useContext } from "react";
+import { AuthContext } from "@/js/AuthContext";
 
 const HomeNavigation = () => {
+    const { user } = useContext(AuthContext);
     return (
         <nav className="navbar navbar-expand-lg bg-light fixed-top">
             <div className="container">
@@ -24,14 +28,28 @@ const HomeNavigation = () => {
                             <i className="bi bi-geo-alt"></i>
                             <a className="nav-link" href="#">Locations</a>
                         </li>
-                        <li className="nav-item d-flex align-items-center">
-                            <i className="bi bi-person"></i>
-                            <a className="nav-link" href="/registration">Sign In</a>
-                        </li>
-                        <li className="nav-item d-flex align-items-center">
-                            <i className="bi bi-lock"></i>
-                            <a className="nav-link" href="/login">Log In</a>
-                        </li>
+
+                        {
+                            user && user ? (
+                                <>
+                                    <li className="nav-item d-flex align-items-center">
+                                        <a className="nav-link dashboard-go" href="/dashboard">Dashboard</a>
+                                    </li>
+                                   
+                                </>
+                            ) : (
+                                <>
+                                    <li className="nav-item d-flex align-items-center">
+                                        <i className="bi bi-person"></i>
+                                        <a className="nav-link" href="/registration">Sign In</a>
+                                    </li>
+                                    <li className="nav-item d-flex align-items-center">
+                                        <i className="bi bi-lock"></i>
+                                        <a className="nav-link" href="/login">Log In</a>
+                                    </li>
+                                </>
+                            )
+                        }
                     </ul>
                 </div>
             </div>

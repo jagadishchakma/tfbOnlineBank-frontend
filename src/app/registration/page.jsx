@@ -3,6 +3,8 @@ import '@/css/auth_css/registration.css';
 import { useState } from "react";
 import api from "@/js/api";
 import Link from 'next/link';
+import logo from '@/images/logo.png';
+import Image from 'next/image';
 
 const Registration = () => {
     const [errors, setErrors] = useState({});
@@ -177,10 +179,9 @@ const Registration = () => {
                     </div>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                    <div className="brand-name">
-                        <h1>TFB</h1>
-                        <p>Online Banking</p>
-                    </div>
+                    <Link href="/" className="brand-name">
+                        <Image src={logo} alt="logo" width={170} height={50}/>
+                    </Link>
                     <div className="registration-form">
                         <form onSubmit={handleSubmit}>
                             <h1>Registration</h1>

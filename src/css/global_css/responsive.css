@@ -113,6 +113,40 @@
     .registration-form .birth_month{
         margin-right: 4px;
     }
+    /* home page css */
+    .bank-learning img{
+        width: 100% !important;
+        height: 300px;
+    }
+    .bank-learning{
+        padding: 15px 5px;
+    }
+    .business-box img{
+        width: 100%;
+        
+    }
+    .business-banking-box{
+        height: 500px !important;
+    }
+    .footer-bottom h4{
+        text-align: center;
+    }
+    .pressenting-product .row>div{
+        margin-bottom: 80px;
+    }
+    .carousel-item img{
+        height: 500px;
+    }
+    .business-banking .navbar-nav{
+        flex-direction: column !important;
+    }
+    .footer-bottom .navbar-nav{
+        gap: 1rem !important
+    }
+    .bank-learning h5{
+        margin: 20px 0px;
+    }
+
 }
 
 @media screen and (min-width:992px) {

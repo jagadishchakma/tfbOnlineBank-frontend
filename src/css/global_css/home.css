@@ -104,3 +104,12 @@ footer a {
     background-color: #81A8CA;
     margin: 100px 0px;
 }
+.dashboard-go{
+    background-color: #81A8CA !important;
+    padding: 20px 10px !important;
+    color: white !important;
+}
+.dashboard-go:hover{
+    background-color: gray !important;
+    color: rgb(244, 242, 242) !important
+}
