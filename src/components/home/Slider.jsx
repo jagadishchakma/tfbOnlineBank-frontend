@@ -16,7 +16,7 @@ const Slider = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <Image src={slid1} className="d-block w-100" alt="slid1" />
+                        <Image src={slid1} className="d-block w-100 h-100" alt="slid1" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>Connecting all you banking needs</h2>
                             <h2>Making It Easy for You</h2>
@@ -24,7 +24,7 @@ const Slider = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <Image src={slid2} className="d-block w-100" alt="slid2" />
+                        <Image src={slid2} className="d-block w-100 h-100" alt="slid2" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>Gives Back To Your Community</h2>
                             <h2>Making It Easy for You</h2>
@@ -32,7 +32,7 @@ const Slider = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <Image src={slid3} className="d-block w-100" alt="slid3" />
+                        <Image src={slid3} className="d-block w-100 h-100" alt="slid3" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2>Connecting all your banking needs</h2>
                             <h2>Making It Easy for You</h2>

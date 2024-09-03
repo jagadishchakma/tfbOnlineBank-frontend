@@ -35,10 +35,10 @@ const Login = () => {
             <div className="row">
                 <div className="col-md-6">
                     <div className="login-logo">
-                        <Image src={login_logo} alt="tfb online banking logo"  />
+                        <Image src={login_logo} alt="tfb online banking logo"/>
                     </div>
                 </div>
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
+                <div className="col-md-6 d-flex align-items-center justify-content-around">
                     <Link href="/" className="brand-name">
                         <Image src={logo} alt="logo" width={170} height={50}/>
                     </Link>
@@ -46,7 +46,7 @@ const Login = () => {
                         {error && <div className="alert alert-danger mt-3">{error}</div>}
                         {message.msg && !error && <div className={`alert alert-${message.color} mt-3 mb-3`} role="alert"> <i className={`bi ${message.icon}`}></i> {message.msg}  </div>}
                         <form onSubmit={handleLogin}>
-                            <h1>Log in</h1>
+                            <h1 className="text-center">Log in</h1>
                             <div className="form-group">
                                 <label htmlFor="account_no">Account number</label>
                                 <input
