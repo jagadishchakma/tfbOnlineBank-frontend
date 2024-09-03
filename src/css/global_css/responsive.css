@@ -146,6 +146,12 @@
     .bank-learning h5{
         margin: 20px 0px;
     }
+    #registration-logo{
+        display: none !important;
+    }
+    .login-logo{
+        display: none !important;
+    }
 
 }
 

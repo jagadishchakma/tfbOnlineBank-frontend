@@ -16,15 +16,15 @@ const HomeNavigation = () => {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
-                        <li className="nav-item d-flex align-items-center">
+                        <li className="nav-item d-flex align-items-center gap-2">
                             <i className="bi bi-chat"></i>
                             <a className="nav-link" href="#">Contact Us</a>
                         </li>
-                        <li className="nav-item d-flex align-items-center">
+                        <li className="nav-item d-flex align-items-center gap-2">
                             <i className="bi bi-file-person"></i>
                             <a className="nav-link" href="#">About Us</a>
                         </li>
-                        <li className="nav-item d-flex align-items-center">
+                        <li className="nav-item d-flex align-items-center gap-2">
                             <i className="bi bi-geo-alt"></i>
                             <a className="nav-link" href="#">Locations</a>
                         </li>
@@ -39,11 +39,11 @@ const HomeNavigation = () => {
                                 </>
                             ) : (
                                 <>
-                                    <li className="nav-item d-flex align-items-center">
+                                    <li className="nav-item d-flex align-items-center gap-2">
                                         <i className="bi bi-person"></i>
                                         <a className="nav-link" href="/registration">Sign In</a>
                                     </li>
-                                    <li className="nav-item d-flex align-items-center">
+                                    <li className="nav-item d-flex align-items-center gap-2">
                                         <i className="bi bi-lock"></i>
                                         <a className="nav-link" href="/login">Log In</a>
                                     </li>
