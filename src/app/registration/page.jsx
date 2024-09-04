@@ -175,8 +175,8 @@ const Registration = () => {
         <div className="registration">
             <div className="row">
                 <div className="col-md-6">
-                    <div className="registration-logo d-flex align-items-center justify-content-center" id="registration-logo">
-                        <Image src={sign_up_logo} alt="tfb online banking logo" />
+                    <div className="registration-logo d-flex" id="registration-logo">
+                        <Image src={sign_up_logo} alt="tfb online banking logo" className="mt-5"/>
                     </div>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">

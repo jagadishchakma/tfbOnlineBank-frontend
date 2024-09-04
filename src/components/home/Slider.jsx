@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Slider = () => {
     return (
-        <div>
+        <div className="container">
             <div id="carouselExampleCaptions" className="carousel slide">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
