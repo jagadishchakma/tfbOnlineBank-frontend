@@ -13,8 +13,8 @@
     background: linear-gradient(45deg, #E64530, transparent);
     height: 100%;
 }
-.registration-logo .mt-5{
-    margin-top: 100px !important
+.registration-logo div{
+    height: 100vh;
 }
 
 .registration input, .registration select, .registration button{
