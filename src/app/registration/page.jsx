@@ -173,165 +173,156 @@ const Registration = () => {
 
     return (
         <div className="registration">
-            <div className="row">
-                <div className="col-md-6">
-                    <div className="registration-logo d-flex align-items-center" id="registration-logo">
-                        <div>
-                        <Image src={sign_up_logo} alt="tfb online banking logo"/>
+            <div className="d-flex align-items-center justify-content-center">
+                <Link href="/" className="brand-name">
+                    <Image src={logo} alt="logo" width={170} height={50} />
+                </Link>
+                <div className="registration-form">
+                    <form onSubmit={handleSubmit}>
+                        <h1 className="text-center">Registration</h1>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" name="username" id="username" placeholder="Enter your username" value={formData.username} onChange={handleChange} />
+                            {errors.username && <span className="invalid-feedback">{errors.username}</span>}
                         </div>
-                    </div>
-                </div>
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
-                    <Link href="/" className="brand-name">
-                        <Image src={logo} alt="logo" width={170} height={50}/>
-                    </Link>
-                    <div className="registration-form">
-                        <form onSubmit={handleSubmit}>
-                            <h1>Registration</h1>
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <input type="text" name="username" id="username" placeholder="Enter your username" value={formData.username} onChange={handleChange} />
-                                {errors.username && <span className="invalid-feedback">{errors.username}</span>}
-                            </div>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label htmlFor="first_name">First Name</label>
-                                        <input type="text" name="first_name" id="first_name" placeholder="Enter your first name" value={formData.first_name} onChange={handleChange} />
-                                        {errors.first_name && <span className="invalid-feedback">{errors.first_name}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="last_name">Last Name</label>
-                                        <input type="text" name="last_name" id="last_name" placeholder="Enter your last name" value={formData.last_name} onChange={handleChange} />
-                                        {errors.last_name && <span className="invalid-feedback">{errors.last_name}</span>}
-                                    </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label htmlFor="first_name">First Name</label>
+                                    <input type="text" name="first_name" id="first_name" placeholder="Enter your first name" value={formData.first_name} onChange={handleChange} />
+                                    {errors.first_name && <span className="invalid-feedback">{errors.first_name}</span>}
                                 </div>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="email" name="email" id="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} />
-                                {errors.email && <span className="invalid-feedback">{errors.email}</span>}
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="phone_no">Phone Number</label>
-                                <input type="number" name="phone_no" id="phone_no" placeholder="Enter your phone number" value={formData.phone_no} onChange={handleChange} />
-                                {errors.phone_no && <span className="invalid-feedback">{errors.phone_no}</span>}
-                            </div>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label htmlFor="account_type">Account Type</label>
-                                        <select name="account_type" id="account type" value={formData.account_type} onChange={handleChange}>
-                                            <option>Select your account type</option>
-                                            <option value="Current">Current</option>
-                                            <option value="Savings">Savings</option>
-                                            <option value="Fixed">Fixed</option>
-                                        </select>
-                                        {errors.gender && <span className="invalid-feedback">{errors.gender}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="gender">Gender</label>
-                                        <select name="gender" id="gender" value={formData.gender} onChange={handleChange}>
-                                            <option>Select your gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                        </select>
-                                        {errors.gender && <span className="invalid-feedback">{errors.gender}</span>}
-                                    </div>
+                            <div className="col-md-6">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="last_name">Last Name</label>
+                                    <input type="text" name="last_name" id="last_name" placeholder="Enter your last name" value={formData.last_name} onChange={handleChange} />
+                                    {errors.last_name && <span className="invalid-feedback">{errors.last_name}</span>}
                                 </div>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="street_address">Street Address</label>
-                                <input type="text" name="street_address" id="street_address" placeholder="Enter your street address" value={formData.street_address} onChange={handleChange} />
-                                {errors.street_address && <span className="invalid-feedback">{errors.street_address}</span>}
-                            </div>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label htmlFor="zip_code">Zip Code</label>
-                                        <input type="number" name="zip_code" id="zip_code" placeholder="Enter your zip code" value={formData.zip_code} onChange={handleChange} />
-                                        {errors.zip_code && <span className="invalid-feedback">{errors.zip_code}</span>}
-                                    </div>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} />
+                            {errors.email && <span className="invalid-feedback">{errors.email}</span>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="phone_no">Phone Number</label>
+                            <input type="number" name="phone_no" id="phone_no" placeholder="Enter your phone number" value={formData.phone_no} onChange={handleChange} />
+                            {errors.phone_no && <span className="invalid-feedback">{errors.phone_no}</span>}
+                        </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label htmlFor="account_type">Account Type</label>
+                                    <select name="account_type" id="account type" value={formData.account_type} onChange={handleChange}>
+                                        <option>Select your account type</option>
+                                        <option value="Current">Current</option>
+                                        <option value="Savings">Savings</option>
+                                        <option value="Fixed">Fixed</option>
+                                    </select>
+                                    {errors.gender && <span className="invalid-feedback">{errors.gender}</span>}
                                 </div>
-                                <div className="col-md-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="city">City</label>
-                                        <input type="text" name="city" id="city" placeholder="Enter your city" value={formData.city} onChange={handleChange} />
-                                        {errors.city && <span className="invalid-feedback">{errors.city}</span>}
-                                    </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="gender">Gender</label>
+                                    <select name="gender" id="gender" value={formData.gender} onChange={handleChange}>
+                                        <option>Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    {errors.gender && <span className="invalid-feedback">{errors.gender}</span>}
                                 </div>
                             </div>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="street_address">Street Address</label>
+                            <input type="text" name="street_address" id="street_address" placeholder="Enter your street address" value={formData.street_address} onChange={handleChange} />
+                            {errors.street_address && <span className="invalid-feedback">{errors.street_address}</span>}
+                        </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label htmlFor="zip_code">Zip Code</label>
+                                    <input type="number" name="zip_code" id="zip_code" placeholder="Enter your zip code" value={formData.zip_code} onChange={handleChange} />
+                                    {errors.zip_code && <span className="invalid-feedback">{errors.zip_code}</span>}
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="city">City</label>
+                                    <input type="text" name="city" id="city" placeholder="Enter your city" value={formData.city} onChange={handleChange} />
+                                    {errors.city && <span className="invalid-feedback">{errors.city}</span>}
+                                </div>
+                            </div>
+                        </div>
 
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label htmlFor="state">State</label>
-                                        <input type="text" name="state" id="state" placeholder="Enter your State" value={formData.state} onChange={handleChange} />
-                                        {errors.state && <span className="invalid-feedback">{errors.state}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="country">Country</label>
-                                        <input type="text" name="country" id="country" placeholder="Enter your country" value={formData.country} onChange={handleChange} />
-                                        {errors.country && <span className="invalid-feedback">{errors.country}</span>}
-                                    </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label htmlFor="state">State</label>
+                                    <input type="text" name="state" id="state" placeholder="Enter your State" value={formData.state} onChange={handleChange} />
+                                    {errors.state && <span className="invalid-feedback">{errors.state}</span>}
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-12 col-md-4">
-                                    <div className="form-group">
-                                        <label htmlFor="birth_year">Birth Year</label>
-                                        <input type="number" name="birth_year" id="birth_year" value={formData.birth_year} onChange={handleChange} />
-                                        {errors.birth_year && <span className="invalid-feedback">{errors.birth_year}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-6 col-md-4">
-                                    <div className="form-group ms-3 birth_month">
-                                        <label htmlFor="birth_month">Birth Month</label>
-                                        <input type="number" name="birth_month" id="birth_month" value={formData.birth_month} onChange={handleChange} />
-                                        {errors.birth_month && <span className="invalid-feedback">{errors.birth_month}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-6 col-md-4">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="birth_date">Birth Date</label>
-                                        <input type="number" name="birth_date" id="birth_date" value={formData.birth_date} onChange={handleChange} />
-                                        {errors.birth_date && <span className="invalid-feedback">{errors.birth_date}</span>}
-                                    </div>
+                            <div className="col-md-6">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="country">Country</label>
+                                    <input type="text" name="country" id="country" placeholder="Enter your country" value={formData.country} onChange={handleChange} />
+                                    {errors.country && <span className="invalid-feedback">{errors.country}</span>}
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label htmlFor="password">Password</label>
-                                        <input type="password" name="password" id="password" placeholder="Enter your strong password" value={formData.password} onChange={handleChange} />
-                                        {errors.password && <span className="invalid-feedback">{errors.password}</span>}
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="form-group ms-3">
-                                        <label htmlFor="confirm_password">Confirm Password</label>
-                                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" value={formData.confirm_password} onChange={handleChange} />
-                                        {errors.confirm_password && <span className="invalid-feedback">{errors.confirm_password}</span>}
-                                    </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-12 col-md-4">
+                                <div className="form-group">
+                                    <label htmlFor="birth_year">Birth Year</label>
+                                    <input type="number" name="birth_year" id="birth_year" value={formData.birth_year} onChange={handleChange} />
+                                    {errors.birth_year && <span className="invalid-feedback">{errors.birth_year}</span>}
                                 </div>
                             </div>
+                            <div className="col-6 col-md-4">
+                                <div className="form-group ms-3 birth_month">
+                                    <label htmlFor="birth_month">Birth Month</label>
+                                    <input type="number" name="birth_month" id="birth_month" value={formData.birth_month} onChange={handleChange} />
+                                    {errors.birth_month && <span className="invalid-feedback">{errors.birth_month}</span>}
+                                </div>
+                            </div>
+                            <div className="col-6 col-md-4">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="birth_date">Birth Date</label>
+                                    <input type="number" name="birth_date" id="birth_date" value={formData.birth_date} onChange={handleChange} />
+                                    {errors.birth_date && <span className="invalid-feedback">{errors.birth_date}</span>}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group">
+                                    <label htmlFor="password">Password</label>
+                                    <input type="password" name="password" id="password" placeholder="Enter your strong password" value={formData.password} onChange={handleChange} />
+                                    {errors.password && <span className="invalid-feedback">{errors.password}</span>}
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group ms-3">
+                                    <label htmlFor="confirm_password">Confirm Password</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" value={formData.confirm_password} onChange={handleChange} />
+                                    {errors.confirm_password && <span className="invalid-feedback">{errors.confirm_password}</span>}
+                                </div>
+                            </div>
+                        </div>
 
-                            {message && <div className="alert alert-success mt-3 regi-submit-alert" role="alert"> <p><i className="bi bi-check-circle-fill"></i> {message} </p> </div>}
-                            <div className="form-group">
-                                {loading ? <button className="btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
-                                    <span className="visually-hidden">Loading...</span>
-                                </div></button> : <input type="submit" className="btn btn-dark" value="Submit" />}
-                                <p className="text-center">Already have an account?<Link href="/login"> Log in</Link></p>
-                                
-                            </div>
-                        </form>
-                    </div>
+                        {message && <div className="alert alert-success mt-3 regi-submit-alert" role="alert"> <p><i className="bi bi-check-circle-fill"></i> {message} </p> </div>}
+                        <div className="form-group">
+                            {loading ? <button className="btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div></button> : <input type="submit" className="btn btn-dark" value="Submit" />}
+                            <p className="text-center">Already have an account?<Link href="/login"> Log in</Link></p>
+
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

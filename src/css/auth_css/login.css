@@ -2,8 +2,13 @@
     margin: 0;
 }
 .login{
-    min-height: 700px;
+    max-width: 1000px;
+    margin: auto !important;
 }
+.login>div{
+    height: 100vh;
+}
+
 .login-logo{
     display: flex;
     align-items: center;
