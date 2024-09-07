@@ -41,7 +41,7 @@ const HomeNavigation = () => {
                                 <>
                                     <li className="nav-item d-flex align-items-center gap-2">
                                         <i className="bi bi-person"></i>
-                                        <a className="nav-link" href="/registration">Sign In</a>
+                                        <a className="nav-link" href="/registration">Sign Up</a>
                                     </li>
                                     <li className="nav-item d-flex align-items-center gap-2">
                                         <i className="bi bi-lock"></i>
