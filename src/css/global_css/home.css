@@ -101,8 +101,11 @@ footer a {
     transition: bottom 1s ease, top 1s ease;
 }
 .bank-learning{
-    background-color: #81A8CA;
     margin: 100px 0px;
+}
+.bank-learning>.row{
+    display: flex;
+    flex-direction: row-reverse;
 }
 .dashboard-go{
     background-color: #81A8CA !important;

@@ -278,21 +278,21 @@ const Registration = () => {
                             <div className="col-12 col-md-4">
                                 <div className="form-group">
                                     <label htmlFor="birth_year">Birth Year</label>
-                                    <input type="number" name="birth_year" id="birth_year" value={formData.birth_year} onChange={handleChange} />
+                                    <input type="number" name="birth_year" id="birth_year" value={formData.birth_year} onChange={handleChange} placeholder="Year"/>
                                     {errors.birth_year && <span className="invalid-feedback">{errors.birth_year}</span>}
                                 </div>
                             </div>
                             <div className="col-6 col-md-4">
                                 <div className="form-group ms-3 birth_month">
                                     <label htmlFor="birth_month">Birth Month</label>
-                                    <input type="number" name="birth_month" id="birth_month" value={formData.birth_month} onChange={handleChange} />
+                                    <input type="number" name="birth_month" id="birth_month" value={formData.birth_month} onChange={handleChange} placeholder="Month"/>
                                     {errors.birth_month && <span className="invalid-feedback">{errors.birth_month}</span>}
                                 </div>
                             </div>
                             <div className="col-6 col-md-4">
                                 <div className="form-group ms-3">
                                     <label htmlFor="birth_date">Birth Date</label>
-                                    <input type="number" name="birth_date" id="birth_date" value={formData.birth_date} onChange={handleChange} />
+                                    <input type="number" name="birth_date" id="birth_date" value={formData.birth_date} onChange={handleChange} placeholder="Date"/>
                                     {errors.birth_date && <span className="invalid-feedback">{errors.birth_date}</span>}
                                 </div>
                             </div>

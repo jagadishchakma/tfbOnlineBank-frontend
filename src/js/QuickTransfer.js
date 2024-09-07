@@ -1,87 +1,76 @@
-function navigationSlider() {
-    const tabs = document.querySelectorAll(".stack-tab-container a.tab");
-    const scrollRightArrow = document.querySelector(".quick-transfer .right-arrow");
-    const scrollLeftArrow = document.querySelector(".quick-transfer .left-arrow");
-    const tabList = document.querySelector(".stack-tab-container div.tabs");
-    const leftArrowContainer = document.querySelector(".quick-transfer .left-arrow");
-    const rightArrowContainer = document.querySelector(".quick-transfer .right-arrow");
-  
-    // Function to remove "active" class from all tabs
-    const removeActiveClasses = () => {
-      tabs.forEach((tab) => {
-        tab.classList.remove("active");
-      });
+import { Link, useLocation } from 'react-router-dom';
+import '../../assets/css/global/topMenu.css';
+import { useState, useRef, useEffect } from 'react';
+
+const NavigationSlider = ({ navlink }) => {
+    const [activeTab, setActiveTab] = useState('');
+    const tabListRef = useRef(null);
+    const leftArrowRef = useRef(null);
+    const rightArrowRef = useRef(null);
+
+    const handleTabClick = (path) => {
+        setActiveTab(path);
     };
-  
-    // Function to manage arrow buttons
-    const manageArrows = () => {
-      const tabListWidth = tabList.offsetWidth;
-      const tabListScrollWidth = tabList.scrollWidth;
-      const scrollLeft = tabList.scrollLeft;
-  
-      if (tabListWidth >= tabListScrollWidth) {
-        leftArrowContainer.classList.remove("active");
-        rightArrowContainer.classList.remove("active");
-      } else {
-        if (scrollLeft <= 0) {
-          leftArrowContainer.classList.remove("active");
-          rightArrowContainer.classList.add("active");
-        } else if (scrollLeft + tabListWidth >= tabListScrollWidth) {
-          leftArrowContainer.classList.add("active");
-          rightArrowContainer.classList.remove("active");
+
+    const handleScroll = () => {
+        const tabList = tabListRef.current;
+        const tabListWidth = tabList.offsetWidth;
+        const tabListScrollWidth = tabList.scrollWidth;
+        const scrollLeft = tabList.scrollLeft;
+
+        if (tabListWidth >= tabListScrollWidth) {
+            leftArrowRef.current.classList.remove('active');
+            rightArrowRef.current.classList.remove('active');
         } else {
-          leftArrowContainer.classList.add("active");
-          rightArrowContainer.classList.add("active");
+            if (scrollLeft <= 0) {
+                leftArrowRef.current.classList.remove('active');
+                rightArrowRef.current.classList.add('active');
+            } else if (scrollLeft + tabListWidth >= tabListScrollWidth - 1) {
+                leftArrowRef.current.classList.add('active');
+                rightArrowRef.current.classList.remove('active');
+            } else {
+                leftArrowRef.current.classList.add('active');
+                rightArrowRef.current.classList.add('active');
+            }
         }
-      }
     };
-  
-    // Add "active" class to clicked tab and remove from others
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", (event) => {
-        event.preventDefault();
-        removeActiveClasses();
-        tab.classList.add("active");
-      });
-    });
-  
-    // Scroll the tab list to the right
-    scrollRightArrow.addEventListener("click", () => {
-      tabList.scrollLeft += 300;
-      manageArrows();
-    });
-  
-    // Scroll the tab list to the left
-    scrollLeftArrow.addEventListener("click", () => {
-      tabList.scrollLeft -= 300;
-      manageArrows();
-    });
-  
-    // Listen to scroll event to manage arrow buttons
-    tabList.addEventListener("scroll", manageArrows);
-  
-    // Adding the dragging functionality
-    let drag = false;
-    const dragging = (e) => {
-      if (!drag) return;
-      tabList.classList.add("dragging");
-      tabList.scrollLeft -= e.movementX;
-      manageArrows();
+
+    const scrollRight = () => {
+        tabListRef.current.scrollLeft += 300;
+        handleScroll();
     };
-  
-    tabList.addEventListener("mousedown", () => {
-      drag = true;
-      tabList.addEventListener("mousemove", dragging);
-    });
-  
-    document.addEventListener("mouseup", () => {
-      drag = false;
-      tabList.removeEventListener("mousemove", dragging);
-      tabList.classList.remove("dragging");
-    });
-  
-    // Initialize arrow buttons
-    manageArrows();
-  }
-  
-  export default navigationSlider;
+
+    const scrollLeft = () => {
+        tabListRef.current.scrollLeft -= 300;
+        handleScroll();
+    };
+
+    const handleMouseDown = (e) => {
+        tabListRef.current.classList.add('dragging');
+        const onMouseMove = (e) => {
+            tabListRef.current.scrollLeft -= e.movementX;
+            handleScroll();
+        };
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', () => {
+            tabListRef.current.classList.remove('dragging');
+            document.removeEventListener('mousemove', onMouseMove);
+        });
+    };
+
+    //side effect
+    const {pathname} = useLocation();
+    useEffect(() => {
+        const tabList = tabListRef.current;
+        if (!tabList) return;
+        setActiveTab(pathname)
+        handleScroll();
+        tabList.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          tabList.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+};
+
+export default NavigationSlider;

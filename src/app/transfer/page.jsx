@@ -56,7 +56,7 @@ const Transfer = () => {
                         <input type="text" id="receiver_account_no" name="receiver_account_no" value={receiver_account_no} onChange={(e) => setReceiverAccountNo(e.target.value)} placeholder="900563869402" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="sender_account_no">Sender Account No:</label>
+                        <label htmlFor="sender_account_no">Your Account No:</label>
                         <input type="text" id="sender_account_no" name="sender_account_no" value={sender_account_no} onChange={(e) => setSenderAccountNo(e.target.value)} placeholder="5345345" />
                     </div>
                     <div className="form-group">

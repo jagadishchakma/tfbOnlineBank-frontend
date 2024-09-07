@@ -51,7 +51,7 @@ const Transaction = () => {
             )
           }
           {
-            transactions.length < 1 && <Image src={notFound} alt="not-found" width={100} height={100} className="mt-5 ms-5" />
+           (transactions.length < 1 && loading==false) && <Image src={notFound} alt="not-found" width={100} height={100} className="mt-5 ms-5" />
           }
           <div className="transaction-list">
             {transactions.map((transaction, index) => (

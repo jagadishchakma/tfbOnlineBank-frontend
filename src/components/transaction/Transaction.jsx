@@ -23,8 +23,8 @@ const Transaction = () => {
             setLoading(true);
             setTransactions([]);
             const response = await authApi.get(`accounts/transactions/${type}`);
-            setTransactions(response.data);
             setLoading(false);
+            setTransactions(response.data);
         }
         getTransactions();
     }, [type]);
@@ -50,11 +50,11 @@ const Transaction = () => {
                 )
             }
             {
-                transactions.length < 1 && <Image src={notFound} alt="not-found" width={100} height={100} className="mt-5 ms-5"/>
+                (transactions.length < 1 && loading==false) && <Image src={notFound} alt="not-found" width={100} height={100} className="mt-5 ms-5"/>
             }
             <div className="transaction-list">
                 {transactions.slice(0,5).map((transaction, index) => (
-                    <Link href={`/transactions/${transaction.id}`} className="d-flex justify-content-between align-items-center row mt-4" key={transaction.id} id={transaction.read?'read':'unread'}>
+                    <Link href={`/transactions/${transaction.id}`} className="d-flex justify-content-between align-items-center row m-2 mt-4" key={transaction.id} id={transaction.read?'read':'unread'}>
                         <div className="col-2">
                             {transaction.type == "Deposited" && <div className={`img-div-${transaction.type}`}><Image src={deposit} alt="deposit" width={20} height={20} /></div>}
                             {transaction.type == "Withdraw" && <div className={`img-div-${transaction.type}`}><Image src={withdraw} alt="withdraw" width={20} height={20} /></div>}

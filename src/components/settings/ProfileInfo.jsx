@@ -5,6 +5,7 @@ import { authApi, uploadApi } from "@/js/api";
 
 const ProfileInfo = () => {
   const [loading, setLoading] = useState(false);
+  const [update, setUpdate] = useState(false);
   const [message, setMessage] = useState('');
   const { user, setReloadUser, reloadUser } = useContext(AuthContext);
   const [personalInfo, setPersonalInfo] = useState({
@@ -44,18 +45,18 @@ const ProfileInfo = () => {
 
   const handleUpdateProfileSubmit = async (e) => {
     setMessage('');
-    setLoading(true);
+    setUpdate(true);
     e.preventDefault();
     try {
       await authApi.patch('accounts/update/profile/', personalInfo);
       setMessage('success')
       setTimeout(() => {
-        setLoading(false);
+        setUpdate(false);
         setMessage('');
         setReloadUser(reloadUser + 1);
       }, 2000);
     } catch (error) {
-      setLoading(false);
+      setUpdate(false);
       setMessage('error')
     }
   }
@@ -78,6 +79,7 @@ const ProfileInfo = () => {
     <div className="w-50" id="settings">
       <div className="profile">
         <img src={user && user.profile.image} alt="" />
+        {loading && <div className="loader"></div>}
         <div className="profile-image-edit">
           <input type="file" id="profile-image-input" hidden onChange={handleProfileImageChange} />
           <label htmlFor="profile-image-input">
@@ -184,10 +186,11 @@ const ProfileInfo = () => {
           </div>
           <div className="d-flex align-items-center gap-3">
             <div className="form-group w-100">
-              <input type="submit" className="w-100 btn btn-dark" value="Save changes" />
+              {update ? <button className="w-100 btn btn-dark"><div className="spinner-border spinner-border-sm" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div></button> : <input type="submit" className="w-100 btn btn-dark" value="Save changes" />}
             </div>
           </div>
-
         </form>
       </div>
     </div>

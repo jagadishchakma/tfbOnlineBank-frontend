@@ -14,7 +14,7 @@
     }
     .main{
         margin: 0;
-        padding: 5px;
+        padding: 15px;
     }
     .top-bar-title{
         font-size: 15px;
@@ -32,16 +32,17 @@
     .quick-transfer-box{
         width: 100% !important;
     }
-    .dash-account-box{
-        padding: 5px !important;
-    }
-    .dash-account-box .deposit, .dash-account-box .withdraw{
-        padding: 5px !important;
+    
+    .dash-account-box .deposit, .dash-account-box .withdraw, .dash-account-box .transfer{
+        padding: 15px !important;
     }
     .dash-account-box h3{
         margin-top: 10px;
         font-size: 15px !important;
         text-align: center;
+    }
+    .dash-account-box .d-flex{
+     justify-content: space-between;
     }
     .dash-account-box h6{
         display: flex;
@@ -50,6 +51,7 @@
         justify-content: center;
         
     }
+  
     .balance h3{
         text-align: left !important;
     }

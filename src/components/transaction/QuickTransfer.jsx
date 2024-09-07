@@ -1,22 +1,93 @@
 'use client';
 import '@/css/transaction_css/quick_transfer.css';
-import navigationSlider from '@/js/QuickTransfer';
+// import navigationSlider from '@/js/QuickTransfer';
 import Link from 'next/link';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { authApi } from '@/js/api';
 import { AuthContext } from '@/js/AuthContext';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
+import notFound from '@/images/not_found.png'
 
 const QuickTransfer = () => {
     const [show, setShow] = useState('list');
     const [account_no, setAccountNo] = useState('');
+    const [loading, setLoading] = useState('');
     const [user_account, setUserAccount] = useState([]);
     const [quickList, setQuickList] = useState([]);
+    // start hello
+    const [activeTab, setActiveTab] = useState('');
+    const tabListRef = useRef(null);
+    const leftArrowRef = useRef(null);
+    const rightArrowRef = useRef(null);
+
+    const handleTabClick = (path) => {
+        setActiveTab(path);
+    };
+
+    const handleScroll = () => {
+        const tabList = tabListRef.current;
+        const tabListWidth = tabList.offsetWidth;
+        const tabListScrollWidth = tabList.scrollWidth;
+        const scrollLeft = tabList.scrollLeft;
+
+        if (tabListWidth >= tabListScrollWidth) {
+            leftArrowRef.current.classList.remove('active');
+            rightArrowRef.current.classList.remove('active');
+        } else {
+            if (scrollLeft <= 0) {
+                leftArrowRef.current.classList.remove('active');
+                rightArrowRef.current.classList.add('active');
+            } else if (scrollLeft + tabListWidth >= tabListScrollWidth - 1) {
+                leftArrowRef.current.classList.add('active');
+                rightArrowRef.current.classList.remove('active');
+            } else {
+                leftArrowRef.current.classList.add('active');
+                rightArrowRef.current.classList.add('active');
+            }
+        }
+    };
+
+    const scrollRight = () => {
+        tabListRef.current.scrollLeft += 300;
+        handleScroll();
+    };
+
+    const scrollLeft = () => {
+        tabListRef.current.scrollLeft -= 300;
+        handleScroll();
+    };
+
+    const handleMouseDown = (e) => {
+        tabListRef.current.classList.add('dragging');
+        const onMouseMove = (e) => {
+            tabListRef.current.scrollLeft -= e.movementX;
+            handleScroll();
+        };
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', () => {
+            tabListRef.current.classList.remove('dragging');
+            document.removeEventListener('mousemove', onMouseMove);
+        });
+    };
+
+    //side effect
+    const pathname = usePathname();
+    useEffect(() => {
+        const tabList = tabListRef.current;
+        if (!tabList) return;
+        setActiveTab(pathname)
+        handleScroll();
+        tabList.addEventListener('scroll', handleScroll);
+
+        return () => {
+            tabList.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    // end hello
 
     const { reloadUser, setReloadUser, setTransfer } = useContext(AuthContext);
-    useEffect(() => {
-        navigationSlider();
-    }, []);
+
 
     useEffect(() => {
         const getQuickList = async () => {
@@ -57,7 +128,7 @@ const QuickTransfer = () => {
     const listItem = () => {
         return (
             <div className="tab-bar">
-                <div className="tabs d-flex gap-2">
+                <div className="tabs d-flex gap-2" ref={tabListRef} onMouseDown={handleMouseDown}>
                     {getTopNavMenu()}
                 </div>
             </div>
@@ -67,12 +138,26 @@ const QuickTransfer = () => {
     //addNewSubmit 
     const addNewSubmit = (e) => {
         e.preventDefault();
+        setLoading('run');
+        setUserAccount([]);
         const searchAccount = async () => {
-            const response = await authApi.get(`accounts/search/${account_no}/`);
-            setUserAccount(response.data);
+
+            try {
+                const response = await authApi.get(`accounts/search/${account_no}/`);
+                setUserAccount(response.data);
+                if (response.data.user) {
+                    setLoading('yes');
+                } else {
+                    setLoading('no');
+                }
+            } catch (error) {
+                setLoading('no');
+            }
+
         }
         searchAccount();
     }
+    console.log(loading, user_account)
 
     // const addQuickTransfer
     const addQuickTransfer = async () => {
@@ -81,7 +166,6 @@ const QuickTransfer = () => {
             setReloadUser(reloadUser + 1);
             setShow('list');
             setUserAccount([]);
-            window.location.reload()
         }
     }
 
@@ -96,7 +180,7 @@ const QuickTransfer = () => {
             </div>
         )
     }
-    console.log(quickList);
+
     const addItem = () => {
         return (
             <div className="add-item">
@@ -105,6 +189,8 @@ const QuickTransfer = () => {
                     <button type="submit" className="p-2"><i className="bi bi-search"></i></button>
                 </form>
                 {user_account.user && showItem()}
+                {loading == 'run' && <div className="loader"></div>}
+                {loading == 'no' && <Image src={notFound} alt="not-found" width={100} height={100} className="m-auto mt-5 d-block" />}
             </div>
         )
     }
@@ -116,16 +202,18 @@ const QuickTransfer = () => {
                     <div className="scroll-bar d-flex justify-content-between align-items-center gap-3">
                         {
                             show == 'list' && (<>
-                                <div className="left-arrow quick-arrow">
+                                <div className="left-arrow quick-arrow" ref={leftArrowRef}
+                                    onClick={scrollLeft}>
                                     <i className="bi bi-chevron-left"></i>
                                 </div>
-                                <div className="right-arrow active">
+                                <div className="right-arrow active" ref={rightArrowRef}
+                                    onClick={scrollRight}>
                                     <i className="bi bi-chevron-right quick-arrow"></i>
                                 </div>
                             </>)
                         }
                         {
-                            show == 'add' && <div className="remove-add" onClick={()=>setShow('list')}><i className="bi bi-x-circle"></i></div>
+                            show == 'add' && <div className="remove-add" onClick={() => setShow('list')}><i className="bi bi-x-circle"></i></div>
                         }
 
                     </div>

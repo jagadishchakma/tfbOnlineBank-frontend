@@ -6,6 +6,7 @@ import deposit from '@/images/deposit.png';
 import withdraw from '@/images/total_withdraw.png';
 import { useContext } from "react";
 import { AuthContext } from "@/js/AuthContext";
+import logo from '@/images/logo.png';
 
 const Navigation = () => {
     const pathname = usePathname();
@@ -13,7 +14,7 @@ const Navigation = () => {
     return (
         <aside id="main-nav" className={toggler? "main-nav nav-open":"main-nav"}>
             <i className="bi bi-x-circle" id="close-main-nav" onClick={()=>setToggler(!toggler)}></i>
-            <h4>TFB</h4>
+            <Link href="/" className="ms-3"><Image src={logo} alt="TFB Bank" width={130} height={40} className="m-auto"/></Link>
             <nav>
                 <Link href="/dashboard" className={pathname == '/dashboard'?'active':'inactive'}><i className="bi bi-houses-fill"></i> Dashboard</Link>
                 <Link href="/transfer" className={pathname == '/transfer'?'active':'inactive'}><i className="bi bi-sign-turn-left-fill"></i> Transfer</Link>

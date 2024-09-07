@@ -42,3 +42,7 @@
     display: block !important;
     font-style: italic;
 }
+.registration input,.registration select{
+    padding-left: 20px;
+    padding-right: 20px;
+}

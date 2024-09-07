@@ -16,7 +16,7 @@ const ProfileSecurity = () => {
   const { user, logout, setReloadUser, reloadUser, finished } = useContext(AuthContext);
 
   //passwordchange handler
-  const handleChagnePass = (e) => {
+  const handleChagnePass = async (e) => {
     e.preventDefault();
     setLoading(true)
     if (newPassword != confirmPassword) {
@@ -34,12 +34,14 @@ const ProfileSecurity = () => {
     }
 
     try {
-      authApi.post('accounts/pass_change/', { old_pass: oldPassword, new_pass: newPassword })
-      logout()
+      const response =  await authApi.post('accounts/pass_change/', { old_pass: oldPassword, new_pass: newPassword })
+      if(response){
+        setErrors({ old_pass: false, new_pass: false, confirm_pass: false })
+        logout();
+      }
       setLoading(false)
     } catch (error) {
-      console.log(error);
-      setErrors({ old_pass: false, new_pass: 'Please provide a strong password', confirm_pass: false })
+      setErrors({ old_pass: 'Old password not matched', new_pass: false, confirm_pass: false })
       setLoading(false)
     }
   }

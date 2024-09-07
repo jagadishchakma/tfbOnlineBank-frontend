@@ -49,3 +49,7 @@
 .login .brand-name h1{
     margin: 0;
 }
+.login input{
+    padding-left: 20px;
+    padding-right: 20px;
+}
