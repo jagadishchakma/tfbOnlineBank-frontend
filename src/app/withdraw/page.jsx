@@ -19,7 +19,7 @@ const Withdraw = () => {
         setLoading(true);
         e.preventDefault();
         if (balance < 500) {
-            setError('Minimum withdraw amount is 500 TK. You can\'t withdraw less than')
+            setError('Minimum withdraw amount is $500. You can\'t withdraw less than')
             setLoading(false);
             return
         }

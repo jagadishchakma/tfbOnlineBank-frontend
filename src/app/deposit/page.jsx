@@ -19,12 +19,12 @@ const Deposit = () => {
         setLoading(true);
         e.preventDefault();
         if (balance < 500) {
-            setError('Minimum deposite amount is 500 TK. You can\'t deposite less than')
+            setError('Minimum deposite amount is $500. You can\'t deposite less than')
             setLoading(false);
             return
         }
         if (balance > 10000000) {
-            setError('Maximum deposite amount is 10 milion. You can\'t deposite more than')
+            setError('Maximum deposite amount is $10 milion. You can\'t deposite more than')
             setLoading(false);
             return
         }

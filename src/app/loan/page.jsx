@@ -17,12 +17,12 @@ const Loan = () => {
         setLoading(true);
         e.preventDefault();
         if (balance < 500) {
-            setError('Minimum loan amount is 500 TK. You can\'t loan less than')
+            setError('Minimum loan amount is $500. You can\'t loan less than')
             setLoading(false);
             return
         }
         if (balance > 10000000) {
-            setError('Maximum loan amount is 10 milion. You can\'t loan more than')
+            setError('Maximum loan amount is $10 milion. You can\'t loan more than')
             setLoading(false);
             return
         }

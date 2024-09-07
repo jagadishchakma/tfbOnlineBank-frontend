@@ -22,7 +22,7 @@ const Transfer = () => {
         setLoading(true);
         e.preventDefault();
         if (balance < 500) {
-            setError('Minimum transfer amount is 500 TK. You can\'t transfer less than')
+            setError('Minimum transfer amount is $500. You can\'t transfer less than')
             setLoading(false);
             return
         }
