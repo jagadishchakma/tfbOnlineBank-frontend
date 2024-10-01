@@ -66,7 +66,7 @@ const TopBar = ({ title }) => {
                     <div className="profile-settings navbar-nav">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Jagadish
+                                {user && user.username}
                             </a>
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" href="/settings">Settings</Link></li>
