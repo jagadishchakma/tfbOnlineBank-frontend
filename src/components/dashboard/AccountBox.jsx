@@ -13,8 +13,15 @@ const AccountBox = () => {
         <div>
             <div className="dash-account-box">
                 <div className="balance">
-                    <h3>Total Balance</h3>
-                    <h1>USD {user && user.profile.balance}</h1>
+                   <div className="d-flex justify-content-between">
+                        <div>
+                        <h3>Total Balance</h3>
+                        <h1>USD {user && user.profile.balance}</h1>
+                        </div>
+                        <div>
+                            <h3>{user && user.profile.account_no}</h3>
+                        </div>
+                   </div>
                 </div>
                 <div>
                     <div className="d-flex align-items-center">
