@@ -1,8 +1,8 @@
 
 
 export const metadata = {
-    title: 'Login',
-    description: 'Login to your account',
+    title: 'Registration',
+    description: 'Registration',
 }
 const LoginLayout = ({ children }) => {
     return children

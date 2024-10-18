@@ -2,8 +2,8 @@ import '@/app/deposit/deposit.css';
 import PrivateRoute from '@/js/PrivateRoute';
 
 export const metadata = {
-    title: 'Deposit',
-    description: 'Deposit to your account',
+    title: 'Withdraw',
+    description: 'Withdraw to your account',
 }
 
 const WithdrawLayout = ({ children }) => {

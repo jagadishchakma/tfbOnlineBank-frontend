@@ -5,7 +5,7 @@ import PrivateRoute from "@/js/PrivateRoute";
 
 
 export const metadata = {
-  title: "TFB Settings",
+  title: "Settings",
   description: "TFB online banking is banking platform service for valuable customer.",
 };
 
