@@ -27,11 +27,11 @@ export default function RootLayout({ children }) {
         </Layout>
       </AuthProvider>
     )
-  } else if (pathname == '/') {
+  } else if (pathname == '/' || pathname=='/contact_us' || pathname=='/services' || pathname=='/about_us') {
     return (
       <AuthProvider>
         <Layout>
-          <section>
+          <section className="sticky-top">
             <HomeNavigation />
           </section>
           <section>

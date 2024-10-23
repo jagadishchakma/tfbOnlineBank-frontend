@@ -18,8 +18,12 @@ const TopBar = ({ title }) => {
     const { user,  reloadUser, logout, setToggler, toggler } = useContext(AuthContext);
     useEffect(() => {
         const fetchTransactions = async () => {
-            const result = await authApi.get('accounts/transactions/');
-            setNotification(result.data);
+            try {
+                const result = await authApi.get('accounts/transactions/');
+                setNotification(result.data);
+            } catch (error) {
+                console.log(error)
+            }
         };
         fetchTransactions();
     }, [reloadUser]);

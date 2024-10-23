@@ -3,13 +3,14 @@ import Image from "next/image";
 import logo from '@/images/logo.png';
 import { useContext } from "react";
 import { AuthContext } from "@/js/AuthContext";
+import Link from "next/link";
 
 const HomeNavigation = () => {
     const { user } = useContext(AuthContext);
     return (
-        <nav className="navbar navbar-expand-lg bg-light fixed-top">
+        <nav className="navbar navbar-expand-lg bg-light">
             <div className="container">
-                <a className="navbar-brand" href="#"><Image src={logo} alt="logo" width={200} height={60} /></a>
+                <Link className="navbar-brand" href="/"><Image src={logo} alt="logo" width={200} height={60} /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -18,15 +19,15 @@ const HomeNavigation = () => {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
                         <li className="nav-item d-flex align-items-center gap-2">
                             <i className="bi bi-chat"></i>
-                            <a className="nav-link" href="#">Contact Us</a>
+                            <Link className="nav-link" href="/contact_us">Contact Us</Link>
                         </li>
                         <li className="nav-item d-flex align-items-center gap-2">
                             <i className="bi bi-file-person"></i>
-                            <a className="nav-link" href="#">About Us</a>
+                            <Link className="nav-link" href="/about_us">About Us</Link>
                         </li>
                         <li className="nav-item d-flex align-items-center gap-2">
-                            <i className="bi bi-geo-alt"></i>
-                            <a className="nav-link" href="#">Locations</a>
+                            <i className="fas fa-concierge-bell"></i>
+                            <Link className="nav-link" href="/services">Services</Link>
                         </li>
 
                         {

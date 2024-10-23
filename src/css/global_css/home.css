@@ -116,3 +116,170 @@ footer a {
     background-color: gray !important;
     color: rgb(244, 242, 242) !important
 }
+
+
+
+/* Styling for the Benefits & Features section with icons */
+.benefits-features-icons {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9fbfc;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-features-icons h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.benefits-features-icons p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Features container styling */
+.features-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Individual feature item styling */
+.feature-item-icons {
+    flex: 1 1 calc(50% - 30px);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item-icons:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.benefits-features-icons .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Feature title and description styling */
+.benefits-features-icons .feature-item-icons h2 {
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+
+.feature-item-icons p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .feature-item-icons {
+        flex: 1 1 calc(100% - 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-item-icons {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+
+
+
+/* Styling for the Security & Compliance section with icons */
+.security-compliance-icons {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f0f4f8;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.security-compliance-icons h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.security-compliance-icons p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Security features container styling */
+.security-features-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Individual feature item styling */
+.feature-item-icons {
+    flex: 1 1 calc(33% - 30px);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item-icons:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.icon {
+    font-size: 40px;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+/* Feature title and description styling */
+.feature-item-icons h2 {
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.feature-item-icons p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .feature-item-icons {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-item-icons {
+        flex: 1 1 100%;
+    }
+}
