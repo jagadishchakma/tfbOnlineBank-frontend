@@ -34,11 +34,11 @@ The TFB Online Banking System is a comprehensive web application that simulates 
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/tfb-online-banking.git
+    git clone https://github.com/jagadishchakma/tfbOnlineBank-frontend
     ```
 2. Navigate to the project directory:
     ```bash
-    cd tfb-online-banking
+    cd tfbOnlineBank-frontend
     ```
 3. Install dependencies:
     ```bash
