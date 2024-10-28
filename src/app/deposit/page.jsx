@@ -29,12 +29,13 @@ const Deposit = () => {
             return
         }
         try {
-            await authApi.put('accounts/balance/update/', { balance: balance, account_no: account_no });
+            let res = await authApi.put('accounts/balance/update/', { balance: balance, account_no: account_no });
+            console.log(res);
             setSuccess('Deposited successfull')
             setTimeout(() => {
                 setLoading(false);
                 setReloadUser(reloadUser + 1);
-                window.location.href = '/transactions'
+                window.location.href = res.data.payment_url
             }, 1000);
 
         } catch (error) {
