@@ -5,17 +5,20 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
   // Check if the request is a POST request to the /deposit route
   if (request.nextUrl.pathname === '/deposit' && request.method === 'POST') {
-    // Perform any custom logic here, such as validation or logging
+    // Rewrite the request to change it to a GET request
+    const url = new URL('/deposit', request.url);
 
-    // Redirect to an API route to handle the request
-    return NextResponse.rewrite(new URL('/deposit', request.url));
+    // Redirect to the same route as a GET request
+    return NextResponse.redirect(url);
   }
+
   // Check if the request is a POST request to the /deposit route
   if (request.nextUrl.pathname === '/transactions' && request.method === 'POST') {
-    // Perform any custom logic here, such as validation or logging
+    // Rewrite the request to change it to a GET request
+    const url = new URL('/transactions', request.url);
 
-    // Redirect to an API route to handle the request
-    return NextResponse.rewrite(new URL('/transactions', request.url));
+    // Redirect to the same route as a GET request
+    return NextResponse.redirect(url);
   }
 
   // Allow other requests to proceed without modification
