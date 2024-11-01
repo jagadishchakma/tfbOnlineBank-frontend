@@ -1,1 +1,1 @@
-export const backend_link = "https://tfbonlinebank.tfbfoundation.org/"
+export const backend_link = "https://tfbonlinebank.vercel.app/"
