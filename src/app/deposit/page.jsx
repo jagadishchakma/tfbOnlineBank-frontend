@@ -3,7 +3,8 @@ import Account from "@/components/global/Account";
 import TopBar from "@/components/global/TopBar";
 import { authApi } from "@/js/api";
 import { AuthContext } from "@/js/AuthContext";
-import { useContext, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
 
 const Deposit = () => {
     const [balance, setBalance] = useState('');
@@ -11,6 +12,21 @@ const Deposit = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+
+    const searchParams = useSearchParams()
+    useEffect(()=>{
+        const status = searchParams.get('status')
+        if(status == 'success'){
+            setSuccess('Deposited successfull!')
+        }
+        if(status == 'failed'){
+            setError('Deposited Failed!')
+        }
+        if(status == 'cancelled'){
+            setError('Deposited Cancelled!')
+        }
+    },[])
+    
 
     const { setReloadUser, reloadUser } = useContext(AuthContext);
     const handleDeposit = async (e) => {
@@ -31,7 +47,7 @@ const Deposit = () => {
         try {
             let res = await authApi.put('accounts/balance/update/', { balance: balance, account_no: account_no });
             console.log(res);
-            setSuccess('Deposited successfull')
+            // setSuccess('Deposited successfull')
             setTimeout(() => {
                 setLoading(false);
                 setReloadUser(reloadUser + 1);
